@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zCN-KB-csy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="x5e-qK-ftv">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="zCN-KB-csy" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vbx-rN-OoW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="73W-e6-5zg" kind="relationship" relationship="rootViewController" id="OoF-cS-cwQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ2-9e-u4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-38" y="487"/>
+        </scene>
+        <!--Favourite Locations View Controller-->
+        <scene sceneID="95e-I5-ytm">
+            <objects>
+                <viewController storyboardIdentifier="FavouriteLocationsViewController" id="73W-e6-5zg" customClass="FavouriteLocationsViewController" customModule="weatheralert" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T5O-y2-63j"/>
+                        <viewControllerLayoutGuide type="bottom" id="nr8-Qq-S4Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5jj-Zs-UXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Za-Wxt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-te-adO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationUITabelViewCell" id="d4x-iZ-LFX" customClass="LocationUITabelViewCell" customModule="weatheralert" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4x-iZ-LFX" id="0Bp-tj-BnY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="73W-e6-5zg" id="lgA-3D-ccC"/>
+                                    <outlet property="delegate" destination="73W-e6-5zg" id="Ats-M5-6Cz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uW3-te-adO" secondAttribute="trailing" id="5HR-za-CGz"/>
+                            <constraint firstItem="bmW-Za-Wxt" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="8mG-Sf-Nie"/>
+                            <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="uW3-te-adO" secondAttribute="bottom" id="EO2-e8-CUK"/>
+                            <constraint firstItem="bmW-Za-Wxt" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="IId-Sp-KkC"/>
+                            <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="aVo-Kv-C9S"/>
+                            <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="bmW-Za-Wxt" secondAttribute="bottom" id="buC-of-h7N"/>
+                            <constraint firstAttribute="trailing" secondItem="bmW-Za-Wxt" secondAttribute="trailing" id="ddc-5H-5Uk"/>
+                            <constraint firstItem="uW3-te-adO" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="qNz-XX-n0M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xEc-UI-UTK"/>
+                    <connections>
+                        <outlet property="locationsUITableView" destination="uW3-te-adO" id="Vj7-Qa-6GB"/>
+                        <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlF-Fs-ieC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="487"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ABlurredWindyDay" width="414" height="736"/>
+    </resources>
 </document>

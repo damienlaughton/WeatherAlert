@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RootUIViewController.swift
 //  weatheralert
 //
 //  Created by Damien Laughton on 29/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RootUIViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
