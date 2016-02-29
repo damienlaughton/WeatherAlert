@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -40,7 +41,42 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYG-u0-SFs" userLabel="Top Padding">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Alert!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smm-FA-hZY">
+                                        <rect key="frame" x="103" y="0.0" width="207" height="44"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-eZ-yvb">
+                                        <rect key="frame" x="414" y="0.0" width="44" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmx-UX-IuZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <state key="normal" image="addButton"/>
+                                                <connections>
+                                                    <action selector="addLocation:" destination="73W-e6-5zg" eventType="touchUpInside" id="KNZ-x4-lUP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xmx-UX-IuZ" secondAttribute="trailing" id="1It-zA-xdA"/>
+                                            <constraint firstAttribute="width" secondItem="eIo-eZ-yvb" secondAttribute="height" multiplier="1:1" id="BRp-TZ-TZy"/>
+                                            <constraint firstItem="xmx-UX-IuZ" firstAttribute="leading" secondItem="eIo-eZ-yvb" secondAttribute="leading" id="S9C-Gm-Zek"/>
+                                            <constraint firstAttribute="bottom" secondItem="xmx-UX-IuZ" secondAttribute="bottom" id="UyL-VW-ScZ"/>
+                                            <constraint firstItem="xmx-UX-IuZ" firstAttribute="top" secondItem="eIo-eZ-yvb" secondAttribute="top" id="nqD-mD-sZ8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Smm-FA-hZY" firstAttribute="width" secondItem="aYG-u0-SFs" secondAttribute="width" multiplier="0.5" id="2ih-Wh-hCy"/>
+                                    <constraint firstItem="Smm-FA-hZY" firstAttribute="top" secondItem="aYG-u0-SFs" secondAttribute="top" id="hcP-kd-ygh"/>
+                                    <constraint firstAttribute="trailing" secondItem="eIo-eZ-yvb" secondAttribute="trailing" constant="-44" id="j9Z-QD-0XX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Smm-FA-hZY" secondAttribute="bottom" id="o6c-ZT-lJK"/>
+                                    <constraint firstItem="eIo-eZ-yvb" firstAttribute="top" secondItem="aYG-u0-SFs" secondAttribute="top" id="uzX-xX-tvS"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-te-adO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
@@ -115,10 +151,12 @@
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="FLL-KU-5yD"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="GAx-kK-Otf"/>
                             <constraint firstItem="bmW-Za-Wxt" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="IId-Sp-KkC"/>
+                            <constraint firstItem="eIo-eZ-yvb" firstAttribute="width" secondItem="5jj-Zs-UXQ" secondAttribute="width" multiplier="0.1062" id="Vux-9Z-vlD"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="aVo-Kv-C9S"/>
                             <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="bmW-Za-Wxt" secondAttribute="bottom" id="buC-of-h7N"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="aYG-u0-SFs" secondAttribute="bottom" id="dWb-R6-PIs"/>
                             <constraint firstAttribute="trailing" secondItem="bmW-Za-Wxt" secondAttribute="trailing" id="ddc-5H-5Uk"/>
+                            <constraint firstItem="Smm-FA-hZY" firstAttribute="centerX" secondItem="5jj-Zs-UXQ" secondAttribute="centerX" id="oTA-ms-LOu"/>
                             <constraint firstAttribute="trailing" secondItem="aYG-u0-SFs" secondAttribute="trailing" id="pio-Xw-HZs"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="qNz-XX-n0M"/>
                         </constraints>
@@ -130,7 +168,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="xEc-UI-UTK"/>
                     <connections>
+                        <outlet property="addButtonTrailingNSLayoutConstraint" destination="j9Z-QD-0XX" id="Cn1-vn-I0K"/>
                         <outlet property="locationsUITableView" destination="uW3-te-adO" id="Vj7-Qa-6GB"/>
+                        <outlet property="titleUILabel" destination="Smm-FA-hZY" id="hgZ-iC-NSA"/>
                         <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
                     </connections>
                 </viewController>
@@ -141,5 +181,6 @@
     </scenes>
     <resources>
         <image name="ABlurredWindyDay" width="414" height="736"/>
+        <image name="addButton" width="44" height="44"/>
     </resources>
 </document>

@@ -25,8 +25,8 @@ class LocationUITabelViewCell: UITableViewCell {
   
 //    view.backgroundColor = UIColor.whiteColor()
     borderUIView.layer.cornerRadius = 10.0
-    borderUIView.layer.borderColor = UIColor.whiteColor().CGColor
-    borderUIView.layer.borderWidth = 5.0
+    borderUIView.layer.borderColor = UIColor.blackColor().CGColor
+    borderUIView.layer.borderWidth = 1.8
     borderUIView.clipsToBounds = true
   
   

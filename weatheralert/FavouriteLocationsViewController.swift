@@ -11,10 +11,15 @@ import UIKit
 class FavouriteLocationsViewController: RootUIViewController {
   
   @IBOutlet weak var locationsUITableView: UITableView!
+  @IBOutlet weak var titleUILabel: UILabel!
+  @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    animateAddButton(offset:0.0, duration:0.25, delay:1.0)
+    
   }
   
   override func didReceiveMemoryWarning() {
@@ -66,14 +71,43 @@ class FavouriteLocationsViewController: RootUIViewController {
       if let location = location(indexPath) {
         cell.configure(location)
       }
-      
-    
-    
+
       return cell
-      
     }
   
+//  MARK: - Animation(s)
   
+  func animateAddButton(offset newOffset: CGFloat, duration:NSTimeInterval, delay: NSTimeInterval, completionHandler:AnimationCompletionHandler = {}) {
+    
+      addButtonTrailingNSLayoutConstraint.constant = newOffset
+    
+      UIView.animateWithDuration(duration, delay: delay, options: .CurveEaseInOut, animations: {
+      
+        self.view.layoutIfNeeded()
+        
+      }, completion: { finished in
+          
+        completionHandler()
+    })
+  }
+  
+//  MARK: - IBAction(s)
+
+  @IBAction func addLocation(sender: UIButton) {
+    animateAddButton(offset:-6.0, duration:0.05, delay:0.0, completionHandler:{AnimationCompletionHandler in
+      self.animateAddButton(offset:0.0, duration:0.1, delay:0.0, completionHandler:{AnimationCompletionHandler in
+        
+//        add location here
+        
+        
+      })
+    })
+
+  }
+
 
 }
+
+
+
 

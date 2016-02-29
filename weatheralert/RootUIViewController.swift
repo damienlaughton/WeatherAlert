@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias AnimationCompletionHandler = () -> ()
+
 class RootUIViewController: UIViewController {
 
   override func viewDidLoad() {
