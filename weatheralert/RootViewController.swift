@@ -1,5 +1,5 @@
 //
-//  RootUIViewController.swift
+//  RootViewController.swift
 //  weatheralert
 //
 //  Created by Damien Laughton on 29/02/2016.
@@ -10,7 +10,7 @@ import UIKit
 
 typealias AnimationCompletionHandler = () -> ()
 
-class RootUIViewController: UIViewController {
+class RootViewController: UIViewController {
   
   @IBOutlet weak var backButtonLeadingNSLayoutConstraint: NSLayoutConstraint?
   

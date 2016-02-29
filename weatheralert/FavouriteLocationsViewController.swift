@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteLocationsViewController: RootUIViewController {
+class FavouriteLocationsViewController: RootViewController {
   
   @IBOutlet weak var locationsUITableView: UITableView!
   @IBOutlet weak var titleUILabel: UILabel!
@@ -134,7 +134,7 @@ class FavouriteLocationsViewController: RootUIViewController {
         
         //        add location here
         
-        self.performSegueWithIdentifier("FavouriteLocationsSegueLocationDetail", sender: self)
+        self.performSegueWithIdentifier("FavouriteLocationsSegueAddLocation", sender: self)
         
       })
     })

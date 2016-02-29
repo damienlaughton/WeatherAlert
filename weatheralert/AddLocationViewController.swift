@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AddLocationViewController: RootUIViewController {
+class AddLocationViewController: RootViewController {
 
 }

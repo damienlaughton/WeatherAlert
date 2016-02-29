@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationDetailViewController: RootUIViewController {
+class LocationDetailViewController: RootViewController {
   
   var selectedLocation: Location? = .None
   
