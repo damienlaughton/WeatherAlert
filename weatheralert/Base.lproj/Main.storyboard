@@ -185,6 +185,7 @@
                         <outlet property="titleUILabel" destination="Smm-FA-hZY" id="hgZ-iC-NSA"/>
                         <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
                         <segue destination="IFp-l7-uOQ" kind="show" identifier="FavouriteLocationsSegueAddLocation" id="Xui-0v-ACC"/>
+                        <segue destination="gTB-77-pMC" kind="show" identifier="FavouriteLocationsSegueLocationDetail" id="Fpy-qB-aBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlF-Fs-ieC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +267,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgp-45-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="487"/>
+            <point key="canvasLocation" x="1090" y="487"/>
+        </scene>
+        <!--Location Detail View Controller-->
+        <scene sceneID="YZc-ot-0ig">
+            <objects>
+                <viewController storyboardIdentifier="LocationDetailViewController" id="gTB-77-pMC" customClass="LocationDetailViewController" customModule="weatheralert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Sh-SY-0Zt"/>
+                        <viewControllerLayoutGuide type="bottom" id="fVb-Iz-X8n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0oM-9c-Kut">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="yWy-L3-iHa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwL-VC-cpU" userLabel="Top Padding">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-4B-A8N">
+                                        <rect key="frame" x="104" y="0.0" width="207" height="44"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyu-9K-WSJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2O-n4-rAt">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <state key="normal" image="backButton"/>
+                                                <connections>
+                                                    <action selector="back:" destination="gTB-77-pMC" eventType="touchUpInside" id="ajM-by-H2p"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="R2O-n4-rAt" secondAttribute="bottom" id="6s1-BU-jcF"/>
+                                            <constraint firstAttribute="trailing" secondItem="R2O-n4-rAt" secondAttribute="trailing" id="BIi-dU-Yqq"/>
+                                            <constraint firstItem="R2O-n4-rAt" firstAttribute="top" secondItem="cyu-9K-WSJ" secondAttribute="top" id="E2m-Bi-9Es"/>
+                                            <constraint firstItem="R2O-n4-rAt" firstAttribute="leading" secondItem="cyu-9K-WSJ" secondAttribute="leading" id="IGw-3y-tkg"/>
+                                            <constraint firstAttribute="width" secondItem="cyu-9K-WSJ" secondAttribute="height" multiplier="1:1" id="hqI-HN-w5p"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="cyu-9K-WSJ" firstAttribute="leading" secondItem="UwL-VC-cpU" secondAttribute="leading" id="M2B-E2-RHk"/>
+                                    <constraint firstItem="cyu-9K-WSJ" firstAttribute="top" secondItem="UwL-VC-cpU" secondAttribute="top" id="ZXM-Dg-kQP"/>
+                                    <constraint firstItem="Ncv-4B-A8N" firstAttribute="top" secondItem="UwL-VC-cpU" secondAttribute="top" id="fnW-mz-5iq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ncv-4B-A8N" secondAttribute="bottom" id="opw-Zc-lhM"/>
+                                    <constraint firstItem="Ncv-4B-A8N" firstAttribute="width" secondItem="UwL-VC-cpU" secondAttribute="width" multiplier="0.5" id="pDQ-ko-gGl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UwL-VC-cpU" firstAttribute="height" secondItem="0oM-9c-Kut" secondAttribute="height" multiplier="0.0597" id="0f0-sj-kqq"/>
+                            <constraint firstItem="cyu-9K-WSJ" firstAttribute="width" secondItem="0oM-9c-Kut" secondAttribute="width" multiplier="0.1062" id="CsP-mD-MuP"/>
+                            <constraint firstItem="fVb-Iz-X8n" firstAttribute="top" secondItem="yWy-L3-iHa" secondAttribute="bottom" id="FRv-Or-EAv"/>
+                            <constraint firstItem="yWy-L3-iHa" firstAttribute="top" secondItem="0oM-9c-Kut" secondAttribute="top" id="MXr-FP-mWh"/>
+                            <constraint firstItem="yWy-L3-iHa" firstAttribute="leading" secondItem="0oM-9c-Kut" secondAttribute="leading" id="O6V-0K-Yoq"/>
+                            <constraint firstAttribute="trailing" secondItem="yWy-L3-iHa" secondAttribute="trailing" id="edh-rs-DIG"/>
+                            <constraint firstItem="UwL-VC-cpU" firstAttribute="top" secondItem="0oM-9c-Kut" secondAttribute="top" id="jim-kk-5pR"/>
+                            <constraint firstItem="UwL-VC-cpU" firstAttribute="leading" secondItem="0oM-9c-Kut" secondAttribute="leading" id="rfr-Gh-rF0"/>
+                            <constraint firstItem="Ncv-4B-A8N" firstAttribute="centerX" secondItem="0oM-9c-Kut" secondAttribute="centerX" id="tbd-Wb-o2c"/>
+                            <constraint firstAttribute="trailing" secondItem="UwL-VC-cpU" secondAttribute="trailing" id="zUt-fU-YHz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonLeadingNSLayoutConstraint" destination="M2B-E2-RHk" id="bQg-R7-aao"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fF4-dJ-2ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="1402"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,8 @@ class FavouriteLocationsViewController: RootUIViewController {
   @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
   @IBOutlet weak var launchCopyUIImageView: UIImageView!
   
+  var selectedLocation: Location? = .None
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -75,6 +77,17 @@ class FavouriteLocationsViewController: RootUIViewController {
     return cell
   }
   
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    
+    if let location = location(indexPath) {
+      selectedLocation = location
+      
+      performSegueWithIdentifier("FavouriteLocationsSegueLocationDetail", sender: self)
+    }
+  }
+  
   //  MARK: - Animation(s)
   
   func openingAnimationSequence() {
@@ -121,10 +134,31 @@ class FavouriteLocationsViewController: RootUIViewController {
         
         //        add location here
         
-        self.performSegueWithIdentifier("FavouriteLocationsSegueAddLocation", sender: self)
+        self.performSegueWithIdentifier("FavouriteLocationsSegueLocationDetail", sender: self)
         
       })
     })
+  }
+  
+  //  MARK: - Segues
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    if segue.identifier == "FavouriteLocationsSegueLocationDetail" {
+      if let location = selectedLocation {
+        
+        let vc = segue.destinationViewController
+        
+        if (vc .isKindOfClass(LocationDetailViewController)) {
+          
+          let rvc = vc as! LocationDetailViewController
+          rvc.selectedLocation = location
+          
+        }
+        
+      }
+    }
+    
   }
 }
 
