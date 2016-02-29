@@ -15,6 +15,7 @@
 		6D8ED0B91C84A14900A791AB /* CoreDataManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCA71C84900F000921C9 /* CoreDataManagerSingleton.swift */; };
 		6D8ED0BD1C84A46900A791AB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8ED0BC1C84A46900A791AB /* Location.swift */; };
 		6D8ED0BE1C84A46900A791AB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8ED0BC1C84A46900A791AB /* Location.swift */; };
+		6D8ED0C01C84AE0800A791AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8ED0BF1C84AE0800A791AB /* Default-568h@2x.png */; };
 		6DA6DC841C848B9F000921C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC831C848B9F000921C9 /* AppDelegate.swift */; };
 		6DA6DC861C848B9F000921C9 /* RootUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC851C848B9F000921C9 /* RootUIViewController.swift */; };
 		6DA6DC891C848B9F000921C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC871C848B9F000921C9 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		6D8ED0BC1C84A46900A791AB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6D8ED0BF1C84AE0800A791AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6DA6DC801C848B9F000921C9 /* weatheralert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatheralert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA6DC831C848B9F000921C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA6DC851C848B9F000921C9 /* RootUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		6DA6DC771C848B9F000921C9 = {
 			isa = PBXGroup;
 			children = (
+				6D8ED0BF1C84AE0800A791AB /* Default-568h@2x.png */,
 				6DA6DC821C848B9F000921C9 /* weatheralert */,
 				6DA6DC9A1C848B9F000921C9 /* weatheralertTests */,
 				6DA6DC811C848B9F000921C9 /* Products */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA6DC911C848B9F000921C9 /* LaunchScreen.storyboard in Resources */,
+				6D8ED0C01C84AE0800A791AB /* Default-568h@2x.png in Resources */,
 				6DA6DC8E1C848B9F000921C9 /* Assets.xcassets in Resources */,
 				6DA6DC891C848B9F000921C9 /* Main.storyboard in Resources */,
 			);
