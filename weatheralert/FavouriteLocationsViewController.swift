@@ -30,22 +30,25 @@ class FavouriteLocationsViewController: RootUIViewController {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    var numberOfRowsInSection: Int = 0
+    var numberOfRowsInSection: Int = 2
     
     return numberOfRowsInSection
   }
   
   func location(indexPath: NSIndexPath) -> Location? {
-    var location : Location? = .None
-    
-
-    
-    return location
+  
+  return Location()
+  
+//    var location : Location? = .None
+//    
+//
+//    
+//    return location
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     
-    let heightForRowAtIndexPath: CGFloat = 44.0
+    let heightForRowAtIndexPath: CGFloat = 54.0
     
     return heightForRowAtIndexPath
   }

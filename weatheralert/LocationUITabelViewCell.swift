@@ -11,10 +11,32 @@ import UIKit
 
 class LocationUITabelViewCell: UITableViewCell {
   
+  @IBOutlet weak var borderUIView: UIView!
+  
   var location: Location? = .None
   
   func configure(location: Location) {
     self.location = location
+  }
+  
+//  MARK: - Programmatic UI Effects
+  
+  func updateProfileImageViewCornerRadius () {
+  
+//    view.backgroundColor = UIColor.whiteColor()
+    borderUIView.layer.cornerRadius = 10.0
+    borderUIView.layer.borderColor = UIColor.whiteColor().CGColor
+    borderUIView.layer.borderWidth = 5.0
+    borderUIView.clipsToBounds = true
+  
+  
+
+  }
+  
+  override func drawRect(rect: CGRect) {
+    super.drawRect(rect)
+    
+    updateProfileImageViewCornerRadius()
   }
   
 }
