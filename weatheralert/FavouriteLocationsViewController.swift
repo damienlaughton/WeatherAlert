@@ -13,13 +13,13 @@ class FavouriteLocationsViewController: RootUIViewController {
   @IBOutlet weak var locationsUITableView: UITableView!
   @IBOutlet weak var titleUILabel: UILabel!
   @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
+  @IBOutlet weak var launchCopyUIImageView: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    animateAddButton(offset:0.0, duration:0.25, delay:1.0)
-    
+    openingAnimationSequence()
   }
   
   override func didReceiveMemoryWarning() {
@@ -41,14 +41,14 @@ class FavouriteLocationsViewController: RootUIViewController {
   }
   
   func location(indexPath: NSIndexPath) -> Location? {
-  
-  return Location()
-  
-//    var location : Location? = .None
-//    
-//
-//    
-//    return location
+    
+    return Location()
+    
+    //    var location : Location? = .None
+    //
+    //
+    //
+    //    return location
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -60,52 +60,70 @@ class FavouriteLocationsViewController: RootUIViewController {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-      var cell = tableView.dequeueReusableCellWithIdentifier("LocationUITabelViewCell") as! LocationUITabelViewCell!
+    var cell = tableView.dequeueReusableCellWithIdentifier("LocationUITabelViewCell") as! LocationUITabelViewCell!
+    
+    if (nil == cell) {
+      tableView.registerClass(LocationUITabelViewCell.classForCoder(), forCellReuseIdentifier: "LocationUITabelViewCell")
       
-      if (nil == cell) {
-        tableView.registerClass(LocationUITabelViewCell.classForCoder(), forCellReuseIdentifier: "LocationUITabelViewCell")
-        
-        cell = LocationUITabelViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "LocationUITabelViewCell")
-      }
-      
-      if let location = location(indexPath) {
-        cell.configure(location)
-      }
-
-      return cell
+      cell = LocationUITabelViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "LocationUITabelViewCell")
     }
+    
+    if let location = location(indexPath) {
+      cell.configure(location)
+    }
+    
+    return cell
+  }
   
-//  MARK: - Animation(s)
+  //  MARK: - Animation(s)
+  
+  func openingAnimationSequence() {
+    
+    animateLaunchReveal(duration: 0.4, delay: 1.0, completionHandler:{AnimationCompletionHandler in
+      self.animateAddButton(offset:0.0, duration:0.25, delay:0.5)
+    })
+  }
+  
   
   func animateAddButton(offset newOffset: CGFloat, duration:NSTimeInterval, delay: NSTimeInterval, completionHandler:AnimationCompletionHandler = {}) {
     
-      addButtonTrailingNSLayoutConstraint.constant = newOffset
+    addButtonTrailingNSLayoutConstraint.constant = newOffset
     
-      UIView.animateWithDuration(duration, delay: delay, options: .CurveEaseInOut, animations: {
+    UIView.animateWithDuration(duration, delay: delay, options: .CurveEaseInOut, animations: {
       
-        self.view.layoutIfNeeded()
-        
+      self.view.layoutIfNeeded()
+      
       }, completion: { finished in
-          
+        
         completionHandler()
     })
   }
   
-//  MARK: - IBAction(s)
-
+  func animateLaunchReveal(duration duration:NSTimeInterval, delay: NSTimeInterval, completionHandler:AnimationCompletionHandler = {}) {
+    
+    UIView.animateWithDuration(duration, delay: delay, options: .CurveEaseInOut, animations: {
+      
+      self.launchCopyUIImageView.alpha = 0.0
+      
+      }, completion: { finished in
+        
+        self.launchCopyUIImageView.hidden = true
+        
+        completionHandler()
+    })
+  }
+  
+  //  MARK: - IBAction(s)
+  
   @IBAction func addLocation(sender: UIButton) {
     animateAddButton(offset:-6.0, duration:0.05, delay:0.0, completionHandler:{AnimationCompletionHandler in
       self.animateAddButton(offset:0.0, duration:0.1, delay:0.0, completionHandler:{AnimationCompletionHandler in
         
-//        add location here
-        
+        //        add location here
         
       })
     })
-
   }
-
-
 }
 
 

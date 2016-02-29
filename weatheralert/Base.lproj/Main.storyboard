@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Za-Wxt">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Za-Wxt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYG-u0-SFs" userLabel="Top Padding">
@@ -141,24 +141,35 @@
                                     <outlet property="delegate" destination="73W-e6-5zg" id="Ats-M5-6Cz"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="zNF-ka-wYi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zNF-ka-wYi" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="2iu-Wx-CSW"/>
                             <constraint firstAttribute="trailing" secondItem="uW3-te-adO" secondAttribute="trailing" id="5HR-za-CGz"/>
                             <constraint firstItem="bmW-Za-Wxt" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="8mG-Sf-Nie"/>
+                            <constraint firstItem="zNF-ka-wYi" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="Apo-hm-Agk"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="height" secondItem="5jj-Zs-UXQ" secondAttribute="height" multiplier="0.0597" id="BjG-k3-oxh"/>
                             <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="uW3-te-adO" secondAttribute="bottom" id="EO2-e8-CUK"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="FLL-KU-5yD"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="GAx-kK-Otf"/>
                             <constraint firstItem="bmW-Za-Wxt" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="IId-Sp-KkC"/>
+                            <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="zNF-ka-wYi" secondAttribute="bottom" id="Ssm-25-hOd"/>
                             <constraint firstItem="eIo-eZ-yvb" firstAttribute="width" secondItem="5jj-Zs-UXQ" secondAttribute="width" multiplier="0.1062" id="Vux-9Z-vlD"/>
+                            <constraint firstAttribute="trailing" secondItem="zNF-ka-wYi" secondAttribute="trailing" id="Wpj-jp-tZZ"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="aVo-Kv-C9S"/>
                             <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="bmW-Za-Wxt" secondAttribute="bottom" id="buC-of-h7N"/>
+                            <constraint firstItem="zNF-ka-wYi" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="cSz-ba-UGm"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="aYG-u0-SFs" secondAttribute="bottom" id="dWb-R6-PIs"/>
                             <constraint firstAttribute="trailing" secondItem="bmW-Za-Wxt" secondAttribute="trailing" id="ddc-5H-5Uk"/>
                             <constraint firstItem="Smm-FA-hZY" firstAttribute="centerX" secondItem="5jj-Zs-UXQ" secondAttribute="centerX" id="oTA-ms-LOu"/>
                             <constraint firstAttribute="trailing" secondItem="aYG-u0-SFs" secondAttribute="trailing" id="pio-Xw-HZs"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="qNz-XX-n0M"/>
+                            <constraint firstItem="zNF-ka-wYi" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="t82-rK-aRA"/>
+                            <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="zNF-ka-wYi" secondAttribute="bottom" id="vjF-kk-2kY"/>
+                            <constraint firstAttribute="trailing" secondItem="zNF-ka-wYi" secondAttribute="trailing" id="yyJ-kG-0Zd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -169,6 +180,7 @@
                     <navigationItem key="navigationItem" id="xEc-UI-UTK"/>
                     <connections>
                         <outlet property="addButtonTrailingNSLayoutConstraint" destination="j9Z-QD-0XX" id="Cn1-vn-I0K"/>
+                        <outlet property="launchCopyUIImageView" destination="zNF-ka-wYi" id="2Y6-Mi-SQf"/>
                         <outlet property="locationsUITableView" destination="uW3-te-adO" id="Vj7-Qa-6GB"/>
                         <outlet property="titleUILabel" destination="Smm-FA-hZY" id="hgZ-iC-NSA"/>
                         <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
@@ -181,6 +193,7 @@
     </scenes>
     <resources>
         <image name="ABlurredWindyDay" width="414" height="736"/>
+        <image name="AWindyDay" width="414" height="736"/>
         <image name="addButton" width="44" height="44"/>
     </resources>
 </document>
