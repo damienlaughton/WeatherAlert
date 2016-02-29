@@ -184,16 +184,95 @@
                         <outlet property="locationsUITableView" destination="uW3-te-adO" id="Vj7-Qa-6GB"/>
                         <outlet property="titleUILabel" destination="Smm-FA-hZY" id="hgZ-iC-NSA"/>
                         <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
+                        <segue destination="IFp-l7-uOQ" kind="show" identifier="FavouriteLocationsSegueAddLocation" id="Xui-0v-ACC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlF-Fs-ieC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="487" y="487"/>
         </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="kdf-km-FKR">
+            <objects>
+                <viewController storyboardIdentifier="AddLocationViewController" id="IFp-l7-uOQ" customClass="AddLocationViewController" customModule="weatheralert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L62-v7-a7N"/>
+                        <viewControllerLayoutGuide type="bottom" id="GSR-xI-9Q1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lGN-ft-MCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="jCX-ph-SN8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oag-Gz-BzU" userLabel="Top Padding">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-ar-VdK">
+                                        <rect key="frame" x="103" y="0.0" width="207" height="44"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSg-Zw-AYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-m4-QWc">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <state key="normal" image="backButton"/>
+                                                <connections>
+                                                    <action selector="back:" destination="IFp-l7-uOQ" eventType="touchUpInside" id="GSZ-xZ-bDM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DSg-Zw-AYJ" secondAttribute="height" multiplier="1:1" id="BhA-rf-MXE"/>
+                                            <constraint firstItem="FBd-m4-QWc" firstAttribute="leading" secondItem="DSg-Zw-AYJ" secondAttribute="leading" id="X0c-9D-8RO"/>
+                                            <constraint firstItem="FBd-m4-QWc" firstAttribute="top" secondItem="DSg-Zw-AYJ" secondAttribute="top" id="aEs-lO-zVv"/>
+                                            <constraint firstAttribute="trailing" secondItem="FBd-m4-QWc" secondAttribute="trailing" id="gJp-cu-oV5"/>
+                                            <constraint firstAttribute="bottom" secondItem="FBd-m4-QWc" secondAttribute="bottom" id="gws-SK-ZVX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DSg-Zw-AYJ" firstAttribute="leading" secondItem="oag-Gz-BzU" secondAttribute="leading" id="Fn1-dA-yUE"/>
+                                    <constraint firstItem="Sfe-ar-VdK" firstAttribute="top" secondItem="oag-Gz-BzU" secondAttribute="top" id="HlV-ce-Bpv"/>
+                                    <constraint firstItem="DSg-Zw-AYJ" firstAttribute="top" secondItem="oag-Gz-BzU" secondAttribute="top" id="PD3-EH-or2"/>
+                                    <constraint firstItem="Sfe-ar-VdK" firstAttribute="width" secondItem="oag-Gz-BzU" secondAttribute="width" multiplier="0.5" id="gFr-o7-7pj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sfe-ar-VdK" secondAttribute="bottom" id="rus-VC-peU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oag-Gz-BzU" secondAttribute="trailing" id="GX4-aZ-c5b"/>
+                            <constraint firstAttribute="trailing" secondItem="jCX-ph-SN8" secondAttribute="trailing" id="Ha1-76-sFr"/>
+                            <constraint firstItem="jCX-ph-SN8" firstAttribute="top" secondItem="lGN-ft-MCQ" secondAttribute="top" id="JUC-BF-Vv9"/>
+                            <constraint firstItem="DSg-Zw-AYJ" firstAttribute="width" secondItem="lGN-ft-MCQ" secondAttribute="width" multiplier="0.1062" id="KX3-Lq-PYr"/>
+                            <constraint firstItem="oag-Gz-BzU" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="OJl-e7-V6F"/>
+                            <constraint firstItem="oag-Gz-BzU" firstAttribute="top" secondItem="lGN-ft-MCQ" secondAttribute="top" id="bnE-6F-hzi"/>
+                            <constraint firstItem="Sfe-ar-VdK" firstAttribute="centerX" secondItem="lGN-ft-MCQ" secondAttribute="centerX" id="iAl-7h-Bwc"/>
+                            <constraint firstItem="jCX-ph-SN8" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="jql-vS-ULE"/>
+                            <constraint firstItem="GSR-xI-9Q1" firstAttribute="top" secondItem="jCX-ph-SN8" secondAttribute="bottom" id="olb-T7-XXT"/>
+                            <constraint firstItem="oag-Gz-BzU" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.0597" id="xPh-VZ-9NH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonLeadingNSLayoutConstraint" destination="Fn1-dA-yUE" id="1QL-fS-AgS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgp-45-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="487"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ABlurredWindyDay" width="414" height="736"/>
         <image name="AWindyDay" width="414" height="736"/>
         <image name="addButton" width="44" height="44"/>
+        <image name="backButton" width="44" height="44"/>
     </resources>
 </document>

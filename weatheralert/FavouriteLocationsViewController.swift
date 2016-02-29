@@ -121,6 +121,8 @@ class FavouriteLocationsViewController: RootUIViewController {
         
         //        add location here
         
+        self.performSegueWithIdentifier("FavouriteLocationsSegueAddLocation", sender: self)
+        
       })
     })
   }
