@@ -13,7 +13,7 @@ typealias AnimationCompletionHandler = () -> ()
 class RootViewController: UIViewController {
   
   @IBOutlet weak var backButtonLeadingNSLayoutConstraint: NSLayoutConstraint?
-  
+  @IBOutlet weak var backButton:UIButton!
   
 
 
@@ -50,6 +50,11 @@ class RootViewController: UIViewController {
       })
     
     }
+  }
+  
+//  Call on Main Thread to traigger back IBAction
+  func tapBackProgrammatically() {
+    back(backButton)
   }
   
   //  MARK: - IBAction(s)

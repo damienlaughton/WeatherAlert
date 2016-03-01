@@ -22,6 +22,8 @@ class AddLocationViewController: RootViewController {
     enableDisableAddLabelButton(self)
   }
   
+  
+  
   @IBAction func enableDisableAddLabelButton (sender: AnyObject) {
     var nameFieldHasText: Bool = false
     if let locationName = nameUITextField.text {
@@ -60,9 +62,16 @@ class AddLocationViewController: RootViewController {
           
           if let weatherDictionary = resultObject as? NSDictionary {
             
-            let location = Location(weatherDictionary: weatherDictionary)
+            let newLocation = Location(weatherDictionary: weatherDictionary)
             
-//            self.locations.append(location)
+            if let existingLocationManagedObject = self.retrieveExistingLocation(newLocation.locationId) {
+            
+              self.updateLocation(existingLocationManagedObject, newLocation: newLocation)
+              
+            } else {
+            
+              self.persistNewLocation(newLocation)
+            }
             
             
           }
@@ -80,8 +89,10 @@ class AddLocationViewController: RootViewController {
         }
       }
       
+      self.performSelectorOnMainThread("tapBackProgrammatically", withObject: .None, waitUntilDone: false)
+      
     })
   }
   
-  
+
 }

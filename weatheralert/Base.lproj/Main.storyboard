@@ -380,6 +380,7 @@
                     </view>
                     <connections>
                         <outlet property="addLocationButton" destination="SUd-SI-WGf" id="ff1-Sr-CHT"/>
+                        <outlet property="backButton" destination="FBd-m4-QWc" id="arg-Zt-E4o"/>
                         <outlet property="backButtonLeadingNSLayoutConstraint" destination="Fn1-dA-yUE" id="1QL-fS-AgS"/>
                         <outlet property="countryUITextField" destination="Ych-Cb-Xq9" id="En6-3p-mOl"/>
                         <outlet property="nameUITextField" destination="B2L-co-MOc" id="Czv-eU-HUt"/>
@@ -459,6 +460,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="R2O-n4-rAt" id="BjC-bL-9e8"/>
                         <outlet property="backButtonLeadingNSLayoutConstraint" destination="M2B-E2-RHk" id="bQg-R7-aao"/>
                     </connections>
                 </viewController>
