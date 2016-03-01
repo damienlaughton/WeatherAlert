@@ -12,25 +12,48 @@ import UIKit
 class LocationUITabelViewCell: UITableViewCell {
   
   @IBOutlet weak var borderUIView: UIView!
+  @IBOutlet weak var windArrowUIImageView: UIImageView!
+  @IBOutlet weak var windArrowHeightConstraint: NSLayoutConstraint!
   
   var location: Location? = .None
   
   func configure(location: Location) {
     self.location = location
+    
+    if let windSpeed = self.location?.windSpeed {
+      adjustWindArrowSize(windSpeed)
+    }
+    
+    if let windDirection = self.location?.windDirection {
+      adjustWindArrowDirection(windDirection)
+    }
   }
   
 //  MARK: - Programmatic UI Effects
   
   func updateProfileImageViewCornerRadius () {
   
-//    view.backgroundColor = UIColor.whiteColor()
     borderUIView.layer.cornerRadius = 10.0
     borderUIView.layer.borderColor = UIColor.blackColor().CGColor
     borderUIView.layer.borderWidth = 1.8
     borderUIView.clipsToBounds = true
+  }
   
+  // Fastest recordord windspeed is 113 metres/sec
+  // source: https://en.wikipedia.org/wiki/Wind_speed
+  func adjustWindArrowSize(windSpeed: Float) {
+    
+    // desired size to be between 11 and 44
+    let constant = 11.0 + (33.0 * windSpeed / 113.0)
+    
+    windArrowHeightConstraint.constant = CGFloat(constant)
+  }
   
-
+  func adjustWindArrowDirection(windDirection: Float) {
+    let radians: CGFloat = CGFloat(windDirection) / 180.0 * CGFloat(M_PI)
+    
+    let t = CGAffineTransformMakeRotation(radians);
+    windArrowUIImageView.transform = t
   }
   
   override func drawRect(rect: CGRect) {

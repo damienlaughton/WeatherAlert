@@ -102,6 +102,7 @@
                                                             <rect key="frame" x="282" y="0.0" width="44" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="AeV-KR-IvR" secondAttribute="height" multiplier="1:1" id="ZwD-QL-Bfp"/>
+                                                                <constraint firstAttribute="height" constant="44" id="taI-lU-NcV"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -114,6 +115,11 @@
                                                         <constraint firstItem="AeV-KR-IvR" firstAttribute="centerX" secondItem="vWf-xM-sdY" secondAttribute="centerX" id="JAb-w1-42h"/>
                                                         <constraint firstItem="AeV-KR-IvR" firstAttribute="height" secondItem="k0d-dV-1be" secondAttribute="height" id="mHO-KJ-Sbf"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="mHO-KJ-Sbf"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-ZS-uVv" userLabel="Left Padding">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="54"/>
@@ -159,6 +165,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="borderUIView" destination="k0d-dV-1be" id="IVh-6l-hDb"/>
+                                            <outlet property="windArrowHeightConstraint" destination="taI-lU-NcV" id="4sp-YP-wfA"/>
+                                            <outlet property="windArrowUIImageView" destination="AeV-KR-IvR" id="dnM-rl-9eZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
