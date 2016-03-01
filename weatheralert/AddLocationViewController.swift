@@ -37,7 +37,50 @@ class AddLocationViewController: RootViewController {
 //  MARK: - IBAction(s)
   
   @IBAction func addLocation(sender: UIButton) {
-  
+    let apiWeather = APIWeather()
+    
+    var locationName = ""
+    if let nameLabelText = nameUITextField.text {
+      locationName = nameLabelText
+    }
+
+//    Not sending a country to the API tends to result in
+//    locations that do not have a id.
+
+    var country = "UK"
+    if let countryLabelText = countryUITextField.text {
+      country = countryLabelText
+    }
+    
+    apiWeather.weather(cityName: locationName, country: country, completion: {(resultObject, status) -> () in
+      
+      if let statusCode = Int(status) {
+        switch statusCode {
+        case 200:
+          
+          if let weatherDictionary = resultObject as? NSDictionary {
+            
+            let location = Location(weatherDictionary: weatherDictionary)
+            
+//            self.locations.append(location)
+            
+            
+          }
+          
+          break
+          
+        default:
+          //A non 200 code implies an error
+          
+          
+          
+          
+          
+          break
+        }
+      }
+      
+    })
   }
   
   
