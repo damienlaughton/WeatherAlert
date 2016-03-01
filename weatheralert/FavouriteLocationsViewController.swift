@@ -50,7 +50,25 @@ class FavouriteLocationsViewController: RootViewController {
     
     self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
     
-    updateLatestWeather()
+    if anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo() {
+    
+      updateLatestWeather()
+    }
+  }
+  
+  func anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo () -> Bool {
+    var anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo = false
+    
+    let tenMinutesAgo = NSDate().dateByAddingTimeInterval(-1 * 10 * 60)
+    
+    for location in self.locations {
+      if location.timestamp.compare(tenMinutesAgo) == .OrderedAscending {
+        anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo = true
+        break
+      }
+    }
+    
+    return anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo
   }
   
   // MARK: - UITableViewDataSource Method(s)
@@ -203,24 +221,39 @@ class FavouriteLocationsViewController: RootViewController {
 //  MARK: - API
 
   func updateLatestWeather() {
-    let apiWeather = APIWeather()
+  
+    if locations.count > 0 {
     
-    apiWeather.weather(cities: ["2643743"], completion: {(resultObject, status) -> () in
+    var arrayOfLocationIds:[String] = []
     
-//    apiWeather.weather(cityName: "London", country: "uk", completion: {(resultObject, status) -> () in
-    
+      for location in locations {
+        arrayOfLocationIds.append(location.locationId)
+      }
+  
+      let apiWeather = APIWeather()
+      
+      apiWeather.weather(cities: arrayOfLocationIds, completion: {(resultObject, status) -> () in
+      
       if let statusCode = Int(status) {
       switch statusCode {
         case 200:
         
           if let weatherDictionary = resultObject as? NSDictionary {
-        
-            let location = Location(weatherDictionary: weatherDictionary)
             
-            self.locations.append(location)
+            let newLocation = Location(weatherDictionary: weatherDictionary)
             
-            self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
+            if let existingLocationManagedObject = self.retrieveExistingLocation(newLocation.locationId) {
+              
+              self.updateLocation(existingLocationManagedObject, newLocation: newLocation)
+              
+            } else {
+              
+              self.persistNewLocation(newLocation)
+            }
+            
+            
           }
+
         
         break
         
@@ -234,8 +267,9 @@ class FavouriteLocationsViewController: RootViewController {
         break
         }
       }
-      
-    })
+        
+      })
+    }
   }
 }
 

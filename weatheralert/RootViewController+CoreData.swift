@@ -1,5 +1,5 @@
 //
-//  AddLocationViewController+CoreData.swift
+//  RootViewController+CoreData.swift
 //  weatheralert
 //
 //  Created by Damien Laughton on 01/03/2016.
@@ -9,7 +9,28 @@
 import Foundation
 import CoreData
 
-extension AddLocationViewController {
+extension RootViewController {
+
+  func retrieveFavouriteLocations() -> [LocationManagedObject] {
+    var favouriteLocations:[LocationManagedObject] = []
+    
+    if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
+      
+      let fetchRequest = NSFetchRequest(entityName: "LocationManagedObject")
+      
+      do {
+        let results =
+        try moc.executeFetchRequest(fetchRequest)
+        favouriteLocations = results as! [LocationManagedObject]
+      } catch let error as NSError {
+        print("Could not fetch \(error), \(error.userInfo)")
+      }
+      
+    }
+    
+    return favouriteLocations
+  }
+
 
   func retrieveExistingLocation(existingLocationId: String) -> LocationManagedObject? {
     var existingLocation:LocationManagedObject? = .None
@@ -65,20 +86,14 @@ extension AddLocationViewController {
   
   func updateLocation(existingLocationManagedObject:LocationManagedObject, newLocation: Location) {
     
-//    if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
+    existingLocationManagedObject.name = newLocation.name
+    existingLocationManagedObject.locationId = newLocation.locationId
+    existingLocationManagedObject.country = newLocation.country
+    existingLocationManagedObject.windSpeed = newLocation.windSpeed
+    existingLocationManagedObject.windDirection = newLocation.windDirection
+    existingLocationManagedObject.sign()
     
-
-        
-
-            existingLocationManagedObject.name = newLocation.name
-            existingLocationManagedObject.locationId = newLocation.locationId
-            existingLocationManagedObject.country = newLocation.country
-            existingLocationManagedObject.windSpeed = newLocation.windSpeed
-            existingLocationManagedObject.windDirection = newLocation.windDirection
-            existingLocationManagedObject.sign()
-            
-            CoreDataManagerSingleton.sharedInstance.saveAllContexts()
-//    }
+    CoreDataManagerSingleton.sharedInstance.saveAllContexts()
     
   }
   
