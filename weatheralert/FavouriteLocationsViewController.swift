@@ -23,14 +23,34 @@ class FavouriteLocationsViewController: RootViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    updateLatestWeather()
-    
     openingAnimationSequence()
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    retrieveExistingWeather()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func retrieveExistingWeather() {
+    let existingLocationManagedObjects = retrieveFavouriteLocations()
+    
+    self.locations = []
+    
+    for existingLocationManagedObject in existingLocationManagedObjects {
+      let location = Location(locationManagedObject: existingLocationManagedObject)
+      
+      self.locations.append(location)
+    }
+    
+    self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
+    
+    updateLatestWeather()
   }
   
   // MARK: - UITableViewDataSource Method(s)

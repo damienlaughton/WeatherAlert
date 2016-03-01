@@ -52,4 +52,32 @@ struct Location {
     
     print(self)
   }
+  
+  init (locationManagedObject: LocationManagedObject) {
+    if let name = locationManagedObject.name {
+      self.name = name
+    }
+    
+    if let country = locationManagedObject.country {
+      self.country = country
+    }
+    
+    if let locationId = locationManagedObject.locationId {
+      self.locationId = locationId
+    }
+    
+    if let windSpeed = locationManagedObject.windSpeed {
+      self.windSpeed = windSpeed.floatValue
+    }
+    
+    if let windDirection = locationManagedObject.windDirection {
+      self.windDirection = windDirection.floatValue
+    }
+    
+    if let timestamp = locationManagedObject.date_modified {
+      self.timestamp = timestamp
+    }
+    
+    print(self)
+  }
 }
