@@ -24,7 +24,11 @@ class LocationUITabelViewCell: UITableViewCell {
   
     self.location = location
     
-    nameUILabel.text = "  \(location.name) (\(location.country))"
+    if location.name != location.originalName {
+      nameUILabel.text = "  \(location.name) (\(location.originalName)), \(location.country)"
+    } else {
+      nameUILabel.text = "  \(location.name), \(location.country)"
+    }
     
     windUILabel.text = "   \(location.windSpeed) metres/sec \(location.windDirection)° azimuth"
     

@@ -71,6 +71,7 @@ extension RootViewController {
         if let newLocationManagedObject = NSManagedObject(entity: locationEntity,
           insertIntoManagedObjectContext: moc) as? LocationManagedObject {
             newLocationManagedObject.name = newLocation.name
+            newLocationManagedObject.originalName = newLocation.originalName
             newLocationManagedObject.locationId = newLocation.locationId
             newLocationManagedObject.country = newLocation.country
             newLocationManagedObject.windSpeed = newLocation.windSpeed

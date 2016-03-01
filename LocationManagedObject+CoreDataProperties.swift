@@ -14,9 +14,11 @@ import CoreData
 
 extension LocationManagedObject {
 
-    @NSManaged var name: String?
     @NSManaged var country: String?
     @NSManaged var locationId: String?
-    @NSManaged var windSpeed: NSNumber?
+    @NSManaged var name: String?
     @NSManaged var windDirection: NSNumber?
+    @NSManaged var windSpeed: NSNumber?
+    @NSManaged var originalName: String?
+
 }

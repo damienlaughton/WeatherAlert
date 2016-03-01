@@ -29,12 +29,6 @@
 		6D6976731C85D450009062D2 /* LocationManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D69766B1C85D450009062D2 /* LocationManagedObject.swift */; };
 		6D6976791C85DB5C009062D2 /* RootViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976781C85DB5C009062D2 /* RootViewController+CoreData.swift */; };
 		6D69767A1C85DB5C009062D2 /* RootViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976781C85DB5C009062D2 /* RootViewController+CoreData.swift */; };
-		6D69768A1C85F796009062D2 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976871C85F796009062D2 /* weatheralert.sqlite */; };
-		6D69768B1C85F796009062D2 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976871C85F796009062D2 /* weatheralert.sqlite */; };
-		6D69768C1C85F796009062D2 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976881C85F796009062D2 /* weatheralert.sqlite-shm */; };
-		6D69768D1C85F796009062D2 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976881C85F796009062D2 /* weatheralert.sqlite-shm */; };
-		6D69768E1C85F796009062D2 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976891C85F796009062D2 /* weatheralert.sqlite-wal */; };
-		6D69768F1C85F796009062D2 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D6976891C85F796009062D2 /* weatheralert.sqlite-wal */; };
 		6D8ED0B41C84A12800A791AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC851C848B9F000921C9 /* RootViewController.swift */; };
 		6D8ED0B51C84A13C00A791AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC871C848B9F000921C9 /* Main.storyboard */; };
 		6D8ED0B61C84A14300A791AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8F1C848B9F000921C9 /* LaunchScreen.storyboard */; };
@@ -62,6 +56,12 @@
 		6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */; };
 		6DA6DCB31C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
 		6DA6DCB41C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
+		6DC3E48C1C860B8E003CA0C0 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4891C860B8E003CA0C0 /* weatheralert.sqlite */; };
+		6DC3E48D1C860B8E003CA0C0 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4891C860B8E003CA0C0 /* weatheralert.sqlite */; };
+		6DC3E48E1C860B8E003CA0C0 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E48A1C860B8E003CA0C0 /* weatheralert.sqlite-shm */; };
+		6DC3E48F1C860B8E003CA0C0 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E48A1C860B8E003CA0C0 /* weatheralert.sqlite-shm */; };
+		6DC3E4901C860B8E003CA0C0 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E48B1C860B8E003CA0C0 /* weatheralert.sqlite-wal */; };
+		6DC3E4911C860B8E003CA0C0 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E48B1C860B8E003CA0C0 /* weatheralert.sqlite-wal */; };
 		6DDB5E981C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E991C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E9C1C85814700B580A7 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E9B1C85814700B580A7 /* APIRoot.swift */; };
@@ -89,9 +89,6 @@
 		6D69766A1C85D450009062D2 /* LocationManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LocationManagedObject+CoreDataProperties.swift"; path = "../LocationManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6D69766B1C85D450009062D2 /* LocationManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManagedObject.swift; path = ../LocationManagedObject.swift; sourceTree = "<group>"; };
 		6D6976781C85DB5C009062D2 /* RootViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RootViewController+CoreData.swift"; sourceTree = "<group>"; };
-		6D6976871C85F796009062D2 /* weatheralert.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weatheralert.sqlite; sourceTree = "<group>"; };
-		6D6976881C85F796009062D2 /* weatheralert.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-shm"; sourceTree = "<group>"; };
-		6D6976891C85F796009062D2 /* weatheralert.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-wal"; sourceTree = "<group>"; };
 		6D8ED0BC1C84A46900A791AB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6D8ED0BF1C84AE0800A791AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6D8ED0C51C84DF7C00A791AB /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +109,9 @@
 		6DA6DCAA1C849061000921C9 /* ApplicationManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManagerSingleton.swift; sourceTree = "<group>"; };
 		6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationsViewController.swift; sourceTree = "<group>"; };
 		6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUITabelViewCell.swift; sourceTree = "<group>"; };
+		6DC3E4891C860B8E003CA0C0 /* weatheralert.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weatheralert.sqlite; sourceTree = "<group>"; };
+		6DC3E48A1C860B8E003CA0C0 /* weatheralert.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-shm"; sourceTree = "<group>"; };
+		6DC3E48B1C860B8E003CA0C0 /* weatheralert.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-wal"; sourceTree = "<group>"; };
 		6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerSingleton.swift; sourceTree = "<group>"; };
 		6DDB5E9B1C85814700B580A7 /* APIRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,9 +152,9 @@
 				6D6976691C85D450009062D2 /* SignatureManagedObject.swift */,
 				6D69766A1C85D450009062D2 /* LocationManagedObject+CoreDataProperties.swift */,
 				6D69766B1C85D450009062D2 /* LocationManagedObject.swift */,
-				6D6976871C85F796009062D2 /* weatheralert.sqlite */,
-				6D6976881C85F796009062D2 /* weatheralert.sqlite-shm */,
-				6D6976891C85F796009062D2 /* weatheralert.sqlite-wal */,
+				6DC3E4891C860B8E003CA0C0 /* weatheralert.sqlite */,
+				6DC3E48A1C860B8E003CA0C0 /* weatheralert.sqlite-shm */,
+				6DC3E48B1C860B8E003CA0C0 /* weatheralert.sqlite-wal */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 				6DA6DC911C848B9F000921C9 /* LaunchScreen.storyboard in Resources */,
 				6D8ED0C01C84AE0800A791AB /* Default-568h@2x.png in Resources */,
 				6DA6DC8E1C848B9F000921C9 /* Assets.xcassets in Resources */,
-				6D69768A1C85F796009062D2 /* weatheralert.sqlite in Resources */,
-				6D69768E1C85F796009062D2 /* weatheralert.sqlite-wal in Resources */,
-				6D69768C1C85F796009062D2 /* weatheralert.sqlite-shm in Resources */,
+				6DC3E48C1C860B8E003CA0C0 /* weatheralert.sqlite in Resources */,
+				6DC3E4901C860B8E003CA0C0 /* weatheralert.sqlite-wal in Resources */,
+				6DC3E48E1C860B8E003CA0C0 /* weatheralert.sqlite-shm in Resources */,
 				6DA6DC891C848B9F000921C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,9 +361,9 @@
 				6D8ED0B51C84A13C00A791AB /* Main.storyboard in Resources */,
 				6D6976651C85CCAA009062D2 /* Assets.xcassets in Resources */,
 				6D8ED0B61C84A14300A791AB /* LaunchScreen.storyboard in Resources */,
-				6D69768D1C85F796009062D2 /* weatheralert.sqlite-shm in Resources */,
-				6D69768F1C85F796009062D2 /* weatheralert.sqlite-wal in Resources */,
-				6D69768B1C85F796009062D2 /* weatheralert.sqlite in Resources */,
+				6DC3E48F1C860B8E003CA0C0 /* weatheralert.sqlite-shm in Resources */,
+				6DC3E4911C860B8E003CA0C0 /* weatheralert.sqlite-wal in Resources */,
+				6DC3E48D1C860B8E003CA0C0 /* weatheralert.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

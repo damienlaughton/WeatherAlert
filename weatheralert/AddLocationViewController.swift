@@ -62,14 +62,15 @@ class AddLocationViewController: RootViewController {
           
           if let weatherDictionary = resultObject as? NSDictionary {
             
-            let newLocation = Location(weatherDictionary: weatherDictionary)
+            var newLocation = Location(weatherDictionary: weatherDictionary)
+            
             
             if let existingLocationManagedObject = self.retrieveExistingLocation(newLocation.locationId) {
             
               self.updateLocation(existingLocationManagedObject, newLocation: newLocation)
               
             } else {
-            
+              newLocation.originalName = locationName
               self.persistNewLocation(newLocation)
             }
             

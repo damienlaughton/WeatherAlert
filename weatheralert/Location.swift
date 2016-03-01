@@ -10,6 +10,7 @@ import Foundation
 
 struct Location {
   var name: String = ""
+  var originalName: String = ""
   var country: String = ""
   var locationId: String = ""
   var windSpeed: Float = 0.0
@@ -56,6 +57,10 @@ struct Location {
   init (locationManagedObject: LocationManagedObject) {
     if let name = locationManagedObject.name {
       self.name = name
+    }
+    
+    if let originalName = locationManagedObject.originalName {
+      self.originalName = originalName
     }
     
     if let country = locationManagedObject.country {

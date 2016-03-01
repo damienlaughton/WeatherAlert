@@ -4,6 +4,7 @@
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locationId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="windDirection" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
@@ -12,7 +13,7 @@
         <attribute name="date_modified" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
+        <element name="LocationManagedObject" positionX="-74" positionY="9" width="254" height="133"/>
         <element name="SignatureManagedObject" positionX="-72" positionY="-136" width="252" height="73"/>
-        <element name="LocationManagedObject" positionX="-74" positionY="9" width="254" height="118"/>
     </elements>
 </model>
