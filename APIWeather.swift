@@ -10,7 +10,7 @@ import Foundation
 
 class APIWeather: APIRoot {
   
-  func weather (cityId cityId: String, completion: APICompletionHandler) {
+  func weatherSingle (cityId cityId: String, completion: APICompletionHandler) {
     
     self.completionHandler = completion
 
@@ -19,13 +19,13 @@ class APIWeather: APIRoot {
     self.get("weather", parameters: parameters)
   }
   
-  func weather (cities cities: [String], completion: APICompletionHandler) {
+  func weatherGroup (cities cities: String, completion: APICompletionHandler) {
     
     self.completionHandler = completion
     
     let parameters: NSDictionary = ["id": cities]
     
-    self.get("weather", parameters: parameters)
+    self.get("group", parameters: parameters)
   }
   
   func weather (cityName cityName: String, country:String, completion: APICompletionHandler) {

@@ -57,6 +57,7 @@ class FavouriteLocationsViewController: RootViewController {
   }
   
   func anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo () -> Bool {
+  
     var anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo = false
     
     let tenMinutesAgo = NSDate().dateByAddingTimeInterval(-1 * 10 * 60)
@@ -225,35 +226,50 @@ class FavouriteLocationsViewController: RootViewController {
     if locations.count > 0 {
     
     var arrayOfLocationIds:[String] = []
+    var listOfLocationIds: String = ""
     
       for location in locations {
-        arrayOfLocationIds.append(location.locationId)
+        if "0" != location.locationId {
+          arrayOfLocationIds.append(location.locationId)
+          listOfLocationIds = listOfLocationIds + location.locationId + ","
+        }
       }
+      
+      listOfLocationIds = String(listOfLocationIds.characters.dropLast())
   
       let apiWeather = APIWeather()
       
-      apiWeather.weather(cities: arrayOfLocationIds, completion: {(resultObject, status) -> () in
+      apiWeather.weatherGroup(cities: listOfLocationIds, completion: {(resultObject, status) -> () in
       
       if let statusCode = Int(status) {
       switch statusCode {
         case 200:
-        
-          if let weatherDictionary = resultObject as? NSDictionary {
+          if let dictionary = resultObject as? NSDictionary {
+          
+            if let list = dictionary.objectForKey("list") as? NSArray {
+          
+              for possibleWeatherDictionary in list {
+          
+                if let weatherDictionary = possibleWeatherDictionary as? NSDictionary {
+                  
+                  let newLocation = Location(weatherDictionary: weatherDictionary)
+                  
+                  if let existingLocationManagedObject = self.retrieveExistingLocation(newLocation.locationId) {
+                    
+                    self.updateLocation(existingLocationManagedObject, newLocation: newLocation)
+                    
+                  } else {
+                    
+                    self.persistNewLocation(newLocation)
+                  }
+                }
+                
+              }
             
-            let newLocation = Location(weatherDictionary: weatherDictionary)
-            
-            if let existingLocationManagedObject = self.retrieveExistingLocation(newLocation.locationId) {
-              
-              self.updateLocation(existingLocationManagedObject, newLocation: newLocation)
-              
-            } else {
-              
-              self.persistNewLocation(newLocation)
             }
-            
-            
           }
-
+        
+          self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
         
         break
         

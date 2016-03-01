@@ -13,14 +13,18 @@ public extension NSDictionary {
     var paramatisedString: String = "?"
     
     for (key, value) in self {
-      if ("?" != paramatisedString){
-        paramatisedString = paramatisedString.stringByAppendingString("&")
-      }
-      
+//      if ("?" != paramatisedString){
+//        paramatisedString = paramatisedString.stringByAppendingString("&")
+//      }
+    
       if value is NSArray {
         //loop through the values
         
         for v in value as! NSArray {
+          
+          if ("?" != paramatisedString){
+            paramatisedString = paramatisedString.stringByAppendingString("&")
+          }
           
           paramatisedString = paramatisedString.stringByAppendingString(key as! NSString as String)
           paramatisedString = paramatisedString.stringByAppendingString("=")
@@ -29,6 +33,10 @@ public extension NSDictionary {
         }
         
       } else {
+      
+        if ("?" != paramatisedString){
+          paramatisedString = paramatisedString.stringByAppendingString("&")
+        }
       
         paramatisedString = paramatisedString.stringByAppendingString(key as! NSString as String)
         paramatisedString = paramatisedString.stringByAppendingString("=")
