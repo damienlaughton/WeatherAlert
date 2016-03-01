@@ -105,6 +105,12 @@
                                                                 <constraint firstAttribute="height" constant="44" id="taI-lU-NcV"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dT9-gN-qyF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="282" height="31"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -113,7 +119,11 @@
                                                         <constraint firstAttribute="trailing" secondItem="vWf-xM-sdY" secondAttribute="trailing" id="FNQ-C9-ej0"/>
                                                         <constraint firstItem="vWf-xM-sdY" firstAttribute="top" secondItem="k0d-dV-1be" secondAttribute="top" id="HUt-wq-bwV"/>
                                                         <constraint firstItem="AeV-KR-IvR" firstAttribute="centerX" secondItem="vWf-xM-sdY" secondAttribute="centerX" id="JAb-w1-42h"/>
+                                                        <constraint firstItem="dT9-gN-qyF" firstAttribute="height" secondItem="k0d-dV-1be" secondAttribute="height" multiplier="0.7045" id="VmW-kQ-ycH"/>
+                                                        <constraint firstItem="dT9-gN-qyF" firstAttribute="leading" secondItem="k0d-dV-1be" secondAttribute="leading" id="aVF-eL-34R"/>
+                                                        <constraint firstItem="dT9-gN-qyF" firstAttribute="top" secondItem="k0d-dV-1be" secondAttribute="top" id="erJ-OY-ErP"/>
                                                         <constraint firstItem="AeV-KR-IvR" firstAttribute="height" secondItem="k0d-dV-1be" secondAttribute="height" id="mHO-KJ-Sbf"/>
+                                                        <constraint firstItem="AeV-KR-IvR" firstAttribute="leading" secondItem="dT9-gN-qyF" secondAttribute="trailing" id="uTc-CO-Ner"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -165,6 +175,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="borderUIView" destination="k0d-dV-1be" id="IVh-6l-hDb"/>
+                                            <outlet property="nameUILabel" destination="dT9-gN-qyF" id="R1h-vR-gii"/>
                                             <outlet property="windArrowHeightConstraint" destination="taI-lU-NcV" id="4sp-YP-wfA"/>
                                             <outlet property="windArrowUIImageView" destination="AeV-KR-IvR" id="dnM-rl-9eZ"/>
                                         </connections>

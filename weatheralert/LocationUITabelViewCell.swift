@@ -15,18 +15,18 @@ class LocationUITabelViewCell: UITableViewCell {
   @IBOutlet weak var windArrowUIImageView: UIImageView!
   @IBOutlet weak var windArrowHeightConstraint: NSLayoutConstraint!
   
+  @IBOutlet weak var nameUILabel: UILabel!
   var location: Location? = .None
   
   func configure(location: Location) {
+  
     self.location = location
     
-    if let windSpeed = self.location?.windSpeed {
-      adjustWindArrowSize(windSpeed)
-    }
+    nameUILabel.text = "  \(location.name) (\(location.country))"
     
-    if let windDirection = self.location?.windDirection {
-      adjustWindArrowDirection(windDirection)
-    }
+    adjustWindArrowSize(location.windSpeed)
+    
+    adjustWindArrowDirection(location.windDirection)
   }
   
 //  MARK: - Programmatic UI Effects
