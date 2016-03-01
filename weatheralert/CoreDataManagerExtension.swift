@@ -63,4 +63,60 @@ extension CoreDataManagerSingleton {
     return sqlite_shm_path
   }
   
+//  MARK: - Initial Vanilla Database
+
+// When the app runs for the first time we want to copy the bundled database to the Documents
+// directory on the device
+
+  func configureInitialDatabase () {
+    let extantDatabase1: Bool? = NSFileManager.defaultManager().fileExistsAtPath(self.sqlite_path())
+    let extantDatabase2: Bool? = NSFileManager.defaultManager().fileExistsAtPath(self.sqlite_wal_path())
+    let extantDatabase3: Bool? = NSFileManager.defaultManager().fileExistsAtPath(self.sqlite_shm_path())
+    
+    if (false == extantDatabase1) || (false == extantDatabase2) || (false == extantDatabase3) {
+      self.copyDataBaseFiles()
+      
+    }
+  }
+  
+  func copyDataBaseFiles () -> Bool {
+    
+    var allThreeDatabaseFilesCopied: Bool = false
+    
+    let bundledDatabasePath1: String? = NSBundle.mainBundle().pathForResource(CORE_DATA_NAME, ofType: "sqlite")
+    let bundledDatabasePath2: String? = NSBundle.mainBundle().pathForResource(CORE_DATA_NAME, ofType: "sqlite-wal")
+    let bundledDatabasePath3: String? = NSBundle.mainBundle().pathForResource(CORE_DATA_NAME, ofType: "sqlite-shm")
+    
+    if (.None != bundledDatabasePath1) && (.None != bundledDatabasePath2) && (.None != bundledDatabasePath3) {
+      
+      var error1: NSError? = nil
+      var error2: NSError? = nil
+      var error3: NSError? = nil
+      
+      do {
+        try NSFileManager.defaultManager().copyItemAtPath(bundledDatabasePath1!, toPath: self.sqlite_path())
+      } catch let error as NSError {
+        error1 = error
+      }
+      do {
+        try NSFileManager.defaultManager().copyItemAtPath(bundledDatabasePath2!, toPath: self.sqlite_wal_path())
+      } catch let error as NSError {
+        error2 = error
+      }
+      do {
+        try NSFileManager.defaultManager().copyItemAtPath(bundledDatabasePath3!, toPath: self.sqlite_shm_path())
+      } catch let error as NSError {
+        error3 = error
+      }
+      
+      if (nil == error1) && (nil == error2) && (nil == error3) {
+        allThreeDatabaseFilesCopied = true
+      }
+      
+    }
+    
+    return allThreeDatabaseFilesCopied
+  }
+
+  
 }

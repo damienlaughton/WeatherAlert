@@ -202,13 +202,13 @@
 			isa = PBXGroup;
 			children = (
 				6D8ED0BB1C84A44400A791AB /* Structs */,
-				6DA6DC831C848B9F000921C9 /* AppDelegate.swift */,
 				6DA6DCB51C849D68000921C9 /* CustomCells */,
 				6DA6DCAE1C849BD0000921C9 /* ViewControllers */,
 				6DA6DCAD1C8493AE000921C9 /* Storyboards */,
 				6DA6DCAC1C84932B000921C9 /* SingletonManagers */,
 				6D6976661C85D2C4009062D2 /* CoreData */,
 				6DA6DC8D1C848B9F000921C9 /* Assets.xcassets */,
+				6DA6DC831C848B9F000921C9 /* AppDelegate.swift */,
 				6DA6DC921C848B9F000921C9 /* Info.plist */,
 			);
 			path = weatheralert;
