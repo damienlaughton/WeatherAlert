@@ -14,8 +14,10 @@ class LocationUITabelViewCell: UITableViewCell {
   @IBOutlet weak var borderUIView: UIView!
   @IBOutlet weak var windArrowUIImageView: UIImageView!
   @IBOutlet weak var windArrowHeightConstraint: NSLayoutConstraint!
-  
+
   @IBOutlet weak var nameUILabel: UILabel!
+  @IBOutlet weak var windUILabel: UILabel!
+
   var location: Location? = .None
   
   func configure(location: Location) {
@@ -23,6 +25,8 @@ class LocationUITabelViewCell: UITableViewCell {
     self.location = location
     
     nameUILabel.text = "  \(location.name) (\(location.country))"
+    
+    windUILabel.text = "   \(location.windSpeed) metres/sec \(location.windDirection)° azimuth"
     
     adjustWindArrowSize(location.windSpeed)
     
