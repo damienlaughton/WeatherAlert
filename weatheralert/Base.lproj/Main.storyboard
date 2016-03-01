@@ -98,12 +98,21 @@
                                                                 <constraint firstAttribute="width" secondItem="vWf-xM-sdY" secondAttribute="height" multiplier="1:1" id="dbT-hR-VI0"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redArrow" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-KR-IvR">
+                                                            <rect key="frame" x="282" y="0.0" width="44" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="AeV-KR-IvR" secondAttribute="height" multiplier="1:1" id="ZwD-QL-Bfp"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="vWf-xM-sdY" secondAttribute="bottom" id="3CB-RQ-0dK"/>
+                                                        <constraint firstItem="AeV-KR-IvR" firstAttribute="centerY" secondItem="vWf-xM-sdY" secondAttribute="centerY" id="F3F-b3-5gZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="vWf-xM-sdY" secondAttribute="trailing" id="FNQ-C9-ej0"/>
                                                         <constraint firstItem="vWf-xM-sdY" firstAttribute="top" secondItem="k0d-dV-1be" secondAttribute="top" id="HUt-wq-bwV"/>
+                                                        <constraint firstItem="AeV-KR-IvR" firstAttribute="centerX" secondItem="vWf-xM-sdY" secondAttribute="centerX" id="JAb-w1-42h"/>
+                                                        <constraint firstItem="AeV-KR-IvR" firstAttribute="height" secondItem="k0d-dV-1be" secondAttribute="height" id="mHO-KJ-Sbf"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-ZS-uVv" userLabel="Left Padding">
@@ -362,6 +371,7 @@
         <image name="AWindyDay" width="414" height="736"/>
         <image name="addButton" width="44" height="44"/>
         <image name="backButton" width="44" height="44"/>
+        <image name="redArrow" width="44" height="44"/>
         <image name="smallCompassRose" width="44" height="44"/>
     </resources>
 </document>
