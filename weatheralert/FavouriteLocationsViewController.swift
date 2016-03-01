@@ -17,9 +17,13 @@ class FavouriteLocationsViewController: RootViewController {
   
   var selectedLocation: Location? = .None
   
+  var locations: [Location] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    updateLatestWeather()
     
     openingAnimationSequence()
   }
@@ -37,20 +41,19 @@ class FavouriteLocationsViewController: RootViewController {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    var numberOfRowsInSection: Int = 2
+    let numberOfRowsInSection: Int = locations.count
     
     return numberOfRowsInSection
   }
   
   func location(indexPath: NSIndexPath) -> Location? {
-    
-    return Location()
-    
-    //    var location : Location? = .None
-    //
-    //
-    //
-    //    return location
+    var location : Location? = .None
+
+    if indexPath.row < locations.count {
+      location = locations[indexPath.row]
+    }
+
+    return location
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -95,6 +98,22 @@ class FavouriteLocationsViewController: RootViewController {
     animateLaunchReveal(duration: 0.4, delay: 1.0, completionHandler:{AnimationCompletionHandler in
       self.animateAddButton(offset:0.0, duration:0.25, delay:0.5)
     })
+  }
+  
+  func animateReloadOfTableData () {
+    
+    UIView.transitionWithView(self.locationsUITableView,
+      duration: 0.5,
+      options: UIViewAnimationOptions.TransitionCrossDissolve,
+      animations: {
+        
+        self.locationsUITableView.reloadData()
+        
+      },
+      completion: { finished in
+        
+    })
+    
   }
   
   
@@ -159,6 +178,44 @@ class FavouriteLocationsViewController: RootViewController {
       }
     }
     
+  }
+  
+//  MARK: - API
+
+  func updateLatestWeather() {
+    let apiWeather = APIWeather()
+    
+    apiWeather.weather(cities: ["2643743"], completion: {(resultObject, status) -> () in
+    
+//    apiWeather.weather(cityName: "London", country: "uk", completion: {(resultObject, status) -> () in
+    
+      if let statusCode = Int(status) {
+      switch statusCode {
+        case 200:
+        
+          if let weatherDictionary = resultObject as? NSDictionary {
+        
+            let location = Location(weatherDictionary: weatherDictionary)
+            
+            self.locations.append(location)
+            
+            self.performSelectorOnMainThread("animateReloadOfTableData", withObject: nil, waitUntilDone: false)
+          }
+        
+        break
+        
+        default:
+        //A non 200 code implies an error
+        
+
+        
+
+        
+        break
+        }
+      }
+      
+    })
   }
 }
 
