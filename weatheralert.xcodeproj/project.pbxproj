@@ -17,6 +17,7 @@
 		6D6976601C8586EC009062D2 /* APIWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D69765E1C8586EC009062D2 /* APIWeather.swift */; };
 		6D6976621C8586FA009062D2 /* APIForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976611C8586FA009062D2 /* APIForecast.swift */; };
 		6D6976631C8586FA009062D2 /* APIForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976611C8586FA009062D2 /* APIForecast.swift */; };
+		6D6976651C85CCAA009062D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8D1C848B9F000921C9 /* Assets.xcassets */; };
 		6D8ED0B41C84A12800A791AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC851C848B9F000921C9 /* RootViewController.swift */; };
 		6D8ED0B51C84A13C00A791AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC871C848B9F000921C9 /* Main.storyboard */; };
 		6D8ED0B61C84A14300A791AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8F1C848B9F000921C9 /* LaunchScreen.storyboard */; };
@@ -314,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8ED0B51C84A13C00A791AB /* Main.storyboard in Resources */,
+				6D6976651C85CCAA009062D2 /* Assets.xcassets in Resources */,
 				6D8ED0B61C84A14300A791AB /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

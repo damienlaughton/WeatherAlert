@@ -295,23 +295,94 @@
                                     <constraint firstAttribute="bottom" secondItem="Sfe-ar-VdK" secondAttribute="bottom" id="rus-VC-peU"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLF-PF-aHo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="74"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-co-MOc">
+                                        <rect key="frame" x="32" y="22" width="350" height="30"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="enableDisableAddLabelButton:" destination="IFp-l7-uOQ" eventType="editingChanged" id="EoT-oL-0aM"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="B2L-co-MOc" firstAttribute="centerY" secondItem="CLF-PF-aHo" secondAttribute="centerY" id="0V2-v1-Qvp"/>
+                                    <constraint firstItem="B2L-co-MOc" firstAttribute="centerX" secondItem="CLF-PF-aHo" secondAttribute="centerX" id="GwZ-PM-sx8"/>
+                                    <constraint firstItem="B2L-co-MOc" firstAttribute="width" secondItem="CLF-PF-aHo" secondAttribute="width" multiplier="0.8454" id="wq2-k1-hhH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGb-KZ-eVN">
+                                <rect key="frame" x="0.0" y="118" width="414" height="74"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-Cb-Xq9">
+                                        <rect key="frame" x="32" y="22" width="350" height="30"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ych-Cb-Xq9" firstAttribute="width" secondItem="wGb-KZ-eVN" secondAttribute="width" multiplier="0.8454" id="B8k-QU-ws4"/>
+                                    <constraint firstItem="Ych-Cb-Xq9" firstAttribute="centerY" secondItem="wGb-KZ-eVN" secondAttribute="centerY" id="TpZ-8z-qO7"/>
+                                    <constraint firstItem="Ych-Cb-Xq9" firstAttribute="centerX" secondItem="wGb-KZ-eVN" secondAttribute="centerX" id="l0L-mT-Vdy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yX-hG-S00">
+                                <rect key="frame" x="0.0" y="192" width="414" height="74"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUd-SI-WGf">
+                                        <rect key="frame" x="141" y="15" width="132" height="44"/>
+                                        <state key="normal" title="Add" backgroundImage="addLocationButton">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addLocation:" destination="IFp-l7-uOQ" eventType="touchUpInside" id="YQK-LB-gnt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="SUd-SI-WGf" firstAttribute="centerX" secondItem="6yX-hG-S00" secondAttribute="centerX" id="N3I-t0-Sae"/>
+                                    <constraint firstItem="SUd-SI-WGf" firstAttribute="centerY" secondItem="6yX-hG-S00" secondAttribute="centerY" id="kDO-8G-62q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6yX-hG-S00" firstAttribute="top" secondItem="wGb-KZ-eVN" secondAttribute="bottom" id="4uZ-ah-QZV"/>
+                            <constraint firstItem="CLF-PF-aHo" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.1005" id="8ux-TP-PWt"/>
                             <constraint firstAttribute="trailing" secondItem="oag-Gz-BzU" secondAttribute="trailing" id="GX4-aZ-c5b"/>
+                            <constraint firstAttribute="trailing" secondItem="wGb-KZ-eVN" secondAttribute="trailing" id="HOW-CN-fAz"/>
                             <constraint firstAttribute="trailing" secondItem="jCX-ph-SN8" secondAttribute="trailing" id="Ha1-76-sFr"/>
                             <constraint firstItem="jCX-ph-SN8" firstAttribute="top" secondItem="lGN-ft-MCQ" secondAttribute="top" id="JUC-BF-Vv9"/>
                             <constraint firstItem="DSg-Zw-AYJ" firstAttribute="width" secondItem="lGN-ft-MCQ" secondAttribute="width" multiplier="0.1062" id="KX3-Lq-PYr"/>
+                            <constraint firstItem="6yX-hG-S00" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.1005" id="LY7-aM-N2a"/>
+                            <constraint firstItem="wGb-KZ-eVN" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.1005" id="M10-MI-Z9c"/>
+                            <constraint firstAttribute="trailing" secondItem="CLF-PF-aHo" secondAttribute="trailing" id="MRp-8Q-BIf"/>
+                            <constraint firstItem="CLF-PF-aHo" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="Njl-Ff-61u"/>
                             <constraint firstItem="oag-Gz-BzU" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="OJl-e7-V6F"/>
+                            <constraint firstItem="SUd-SI-WGf" firstAttribute="width" secondItem="lGN-ft-MCQ" secondAttribute="width" multiplier="0.3188" id="Y7T-hb-r3Q"/>
                             <constraint firstItem="oag-Gz-BzU" firstAttribute="top" secondItem="lGN-ft-MCQ" secondAttribute="top" id="bnE-6F-hzi"/>
+                            <constraint firstAttribute="trailing" secondItem="6yX-hG-S00" secondAttribute="trailing" id="g4B-es-q4y"/>
                             <constraint firstItem="Sfe-ar-VdK" firstAttribute="centerX" secondItem="lGN-ft-MCQ" secondAttribute="centerX" id="iAl-7h-Bwc"/>
                             <constraint firstItem="jCX-ph-SN8" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="jql-vS-ULE"/>
+                            <constraint firstItem="SUd-SI-WGf" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.0597" id="lDJ-TD-nT9"/>
+                            <constraint firstItem="wGb-KZ-eVN" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="oGa-zf-SNA"/>
                             <constraint firstItem="GSR-xI-9Q1" firstAttribute="top" secondItem="jCX-ph-SN8" secondAttribute="bottom" id="olb-T7-XXT"/>
+                            <constraint firstItem="6yX-hG-S00" firstAttribute="leading" secondItem="lGN-ft-MCQ" secondAttribute="leading" id="p5f-PH-nY9"/>
+                            <constraint firstItem="CLF-PF-aHo" firstAttribute="top" secondItem="oag-Gz-BzU" secondAttribute="bottom" id="sbA-iR-WzJ"/>
+                            <constraint firstItem="wGb-KZ-eVN" firstAttribute="top" secondItem="CLF-PF-aHo" secondAttribute="bottom" id="vKJ-cm-l9k"/>
                             <constraint firstItem="oag-Gz-BzU" firstAttribute="height" secondItem="lGN-ft-MCQ" secondAttribute="height" multiplier="0.0597" id="xPh-VZ-9NH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addLocationButton" destination="SUd-SI-WGf" id="ff1-Sr-CHT"/>
                         <outlet property="backButtonLeadingNSLayoutConstraint" destination="Fn1-dA-yUE" id="1QL-fS-AgS"/>
+                        <outlet property="countryUITextField" destination="Ych-Cb-Xq9" id="En6-3p-mOl"/>
+                        <outlet property="nameUITextField" destination="B2L-co-MOc" id="Czv-eU-HUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgp-45-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,6 +471,7 @@
         <image name="ABlurredWindyDay" width="414" height="736"/>
         <image name="AWindyDay" width="414" height="736"/>
         <image name="addButton" width="44" height="44"/>
+        <image name="addLocationButton" width="132" height="44"/>
         <image name="backButton" width="44" height="44"/>
         <image name="redArrow" width="44" height="44"/>
         <image name="smallCompassRose" width="44" height="44"/>
