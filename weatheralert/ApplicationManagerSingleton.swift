@@ -47,6 +47,8 @@ import UIKit
     self.application.networkActivityIndicatorVisible = false
   }
   
+  var selectedLocation: Location? = .None
+  
 //  MARK:- Vanilla Data
   
   lazy var vanillaString: String = {

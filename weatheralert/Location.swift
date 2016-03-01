@@ -11,7 +11,7 @@ import Foundation
 struct Location {
   var name: String = ""
   var country: String = ""
-  var locationId: Float = 0.0
+  var locationId: String = ""
   var windSpeed: Float = 0.0
   var windDirection: Float = 0.0
   var timestamp: NSDate = NSDate()
@@ -32,8 +32,8 @@ struct Location {
       }
     }
     
-    if let locationId = weatherDictionary.objectForKey("id") as? Float {
-      self.locationId = locationId
+    if let locationId = weatherDictionary.objectForKey("id") as? Int {
+      self.locationId = "\(locationId)"
     }
     
     if let _ = weatherDictionary.objectForKey("wind") {

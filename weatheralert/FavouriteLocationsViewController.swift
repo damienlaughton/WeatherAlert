@@ -15,7 +15,7 @@ class FavouriteLocationsViewController: RootViewController {
   @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
   @IBOutlet weak var launchCopyUIImageView: UIImageView!
   
-  var selectedLocation: Location? = .None
+
   
   var locations: [Location] = []
   
@@ -67,7 +67,7 @@ class FavouriteLocationsViewController: RootViewController {
     
     var cell = tableView.dequeueReusableCellWithIdentifier("LocationUITabelViewCell") as! LocationUITabelViewCell!
     
-    if (nil == cell) {
+    if (.None == cell) {
       tableView.registerClass(LocationUITabelViewCell.classForCoder(), forCellReuseIdentifier: "LocationUITabelViewCell")
       
       cell = LocationUITabelViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "LocationUITabelViewCell")
@@ -85,7 +85,7 @@ class FavouriteLocationsViewController: RootViewController {
     tableView.deselectRowAtIndexPath(indexPath, animated: false)
     
     if let location = location(indexPath) {
-      selectedLocation = location
+      ApplicationManagerSingleton.sharedInstance.selectedLocation = location
       
       performSegueWithIdentifier("FavouriteLocationsSegueLocationDetail", sender: self)
     }
@@ -164,7 +164,7 @@ class FavouriteLocationsViewController: RootViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     if segue.identifier == "FavouriteLocationsSegueLocationDetail" {
-      if let location = selectedLocation {
+      if let location = ApplicationManagerSingleton.sharedInstance.selectedLocation {
         
         let vc = segue.destinationViewController
         
@@ -199,7 +199,7 @@ class FavouriteLocationsViewController: RootViewController {
             
             self.locations.append(location)
             
-            self.performSelectorOnMainThread("animateReloadOfTableData", withObject: nil, waitUntilDone: false)
+            self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
           }
         
         break
