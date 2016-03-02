@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 extension RootViewController {
-
+  
   // MARK: - LocationManagedObject
   
   func retrieveExistingLocation(existingLocationId: String) -> LocationManagedObject? {
@@ -19,8 +19,6 @@ extension RootViewController {
     var existingLocations:[LocationManagedObject] = []
     
     if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
-      
-//      moc.performBlock {
       
       let fetchRequest = NSFetchRequest(entityName: "LocationManagedObject")
       
@@ -39,20 +37,15 @@ extension RootViewController {
       } catch let error as NSError {
         print("Could not fetch \(error), \(error.userInfo)")
       }
-      
-//      }
-      
     }
     
     return existingLocation
   }
-
+  
   func retrieveFavouriteLocations() -> [LocationManagedObject] {
     var favouriteLocations:[LocationManagedObject] = []
     
     if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
-      
-      
       
       let fetchRequest = NSFetchRequest(entityName: "LocationManagedObject")
       
@@ -63,7 +56,6 @@ extension RootViewController {
       } catch let error as NSError {
         print("Could not fetch \(error), \(error.userInfo)")
       }
-      
     }
     
     return favouriteLocations
@@ -111,7 +103,7 @@ extension RootViewController {
     var forecasts:[ForecastManagedObject] = []
     
     if let locationManagedObject = retrieveExistingLocation(location.locationId) {
-    
+      
       if let forecastManagedObjects = locationManagedObject.forecasts {
         forecasts = (forecastManagedObjects.allObjects as? [ForecastManagedObject])!
       }
@@ -121,26 +113,24 @@ extension RootViewController {
   }
   
   func deletePreviousForecasts(location location: Location) {
-  
-    if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
     
-//      moc.performBlock {
-  
-      if let locationManagedObject = self.retrieveExistingLocation(location.locationId) {
+    if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
+      
+      moc.performBlockAndWait {
         
-        let forecastManagedObjects = self.retrieveForecasts(location: location)
+        if let locationManagedObject = self.retrieveExistingLocation(location.locationId) {
           
-        for forecastManagedObject in forecastManagedObjects {
-          moc.deleteObject(forecastManagedObject)
+          let forecastManagedObjects = self.retrieveForecasts(location: location)
+          
+          for forecastManagedObject in forecastManagedObjects {
+            moc.deleteObject(forecastManagedObject)
+          }
+          
+          locationManagedObject.forecasts = .None
         }
         
-        locationManagedObject.forecasts = .None
-        
+        CoreDataManagerSingleton.sharedInstance.saveAllContexts()
       }
-      
-      CoreDataManagerSingleton.sharedInstance.saveAllContexts()
-      
-//      }
     }
   }
   
@@ -148,20 +138,23 @@ extension RootViewController {
     
     if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
       
-      if let locationManagedObject = retrieveExistingLocation(location.locationId) {
+      moc.performBlockAndWait {
       
-        if let forecastEntity = NSEntityDescription.entityForName("ForecastManagedObject", inManagedObjectContext: moc) {
-      
-          if let newForecastManagedObject = NSManagedObject(entity: forecastEntity,
-            insertIntoManagedObjectContext: moc) as? ForecastManagedObject {
+        if let locationManagedObject = self.retrieveExistingLocation(location.locationId) {
+          
+          if let forecastEntity = NSEntityDescription.entityForName("ForecastManagedObject", inManagedObjectContext: moc) {
             
-              newForecastManagedObject.location = locationManagedObject
-              newForecastManagedObject.dateOfForecast = newForecast.dateOfForecast
-              newForecastManagedObject.windSpeed = newForecast.windSpeed
-              newForecastManagedObject.windDirection = newForecast.windDirection
-              newForecastManagedObject.sign()
-              
-              CoreDataManagerSingleton.sharedInstance.saveAllContexts()
+            if let newForecastManagedObject = NSManagedObject(entity: forecastEntity,
+              insertIntoManagedObjectContext: moc) as? ForecastManagedObject {
+                
+                newForecastManagedObject.location = locationManagedObject
+                newForecastManagedObject.dateOfForecast = newForecast.dateOfForecast
+                newForecastManagedObject.windSpeed = newForecast.windSpeed
+                newForecastManagedObject.windDirection = newForecast.windDirection
+                newForecastManagedObject.sign()
+                
+                CoreDataManagerSingleton.sharedInstance.saveAllContexts()
+            }
           }
         }
       }

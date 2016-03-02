@@ -43,7 +43,6 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
     self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
     
     if self.forecasts.count == 0 || anyForecasteHasBeenModifiedMoreThanTenMinutesAgo() {
-      
       updateLatestForecast()
     }
   }
@@ -202,6 +201,8 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
     if let location = selectedLocation {
     
       if location.locationId != "0" {
+      
+      self.forecasts = []
       
         let apiForecast = APIForecast()
         
