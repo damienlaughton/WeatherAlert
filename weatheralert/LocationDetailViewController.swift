@@ -102,7 +102,11 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     
-    let heightForRowAtIndexPath: CGFloat = 54.0
+    var heightForRowAtIndexPath: CGFloat = 54.0
+    
+    if indexPath.section == 1 {
+      heightForRowAtIndexPath = 104.0
+    }
     
     return heightForRowAtIndexPath
   }
