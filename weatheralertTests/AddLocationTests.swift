@@ -22,7 +22,7 @@ class AddLocationTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddLocationViewController") as! weatheralert.AddLocationViewController
       
-        weatherDictionary = ["name":"ABC","country":"US","id":123456,"speed":2.3,"deg":45]
+        weatherDictionary = ["name":"ABC","country":"US","id":123456,"wind":["speed":2.3,"deg":45]]
     }
     
     override func tearDown() {
