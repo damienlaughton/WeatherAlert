@@ -14,7 +14,7 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
   @IBOutlet weak var titleUILabel: UILabel!
   @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
   @IBOutlet weak var launchCopyUIImageView: UIImageView!
-  
+  @IBOutlet weak var zeroLocationsMessageView: UIView!
 
   
   var locations: [Location] = []
@@ -50,9 +50,19 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
     
     self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
     
+    checkForZeroLocations()
+    
     if anyFavouriteHasBeenModifiedMoreThanTenMinutesAgo() {
     
       updateLatestWeather()
+    }
+  }
+  
+  func checkForZeroLocations () {
+    if self.locations.count == 0 {
+      animateZeroLocationsMessage(duration: 0.3, delay: 1.0)
+    } else {
+      zeroLocationsMessageView.alpha = 0.0
     }
   }
   
@@ -157,6 +167,20 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
     
   }
   
+  func animateZeroLocationsMessage(duration duration:NSTimeInterval, delay: NSTimeInterval, completionHandler:AnimationCompletionHandler = {}) {
+    
+    self.zeroLocationsMessageView.alpha = 0.0
+    
+    UIView.animateWithDuration(duration, delay: delay, options: .CurveEaseInOut, animations: {
+      
+      self.zeroLocationsMessageView.alpha = 1.0
+      
+      }, completion: { finished in
+        
+        completionHandler()
+    })
+  }
+
   
   func animateAddButton(offset newOffset: CGFloat, duration:NSTimeInterval, delay: NSTimeInterval, completionHandler:AnimationCompletionHandler = {}) {
     

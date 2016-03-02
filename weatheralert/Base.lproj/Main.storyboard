@@ -39,6 +39,34 @@
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABlurredWindyDay" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-Za-Wxt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMt-9X-noR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No locations yet. Use the Add" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYD-Tl-YcP">
+                                        <rect key="frame" x="0.0" y="343" width="414" height="51"/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" button to create some!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6O-cO-jjO">
+                                        <rect key="frame" x="0.0" y="369" width="414" height="51"/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="u6O-cO-jjO" firstAttribute="height" secondItem="dMt-9X-noR" secondAttribute="height" multiplier="0.0692" id="7No-wR-O83"/>
+                                    <constraint firstItem="aYD-Tl-YcP" firstAttribute="centerY" secondItem="dMt-9X-noR" secondAttribute="centerY" id="J8g-iv-qim"/>
+                                    <constraint firstAttribute="trailing" secondItem="u6O-cO-jjO" secondAttribute="trailing" id="VXA-DR-auG"/>
+                                    <constraint firstItem="aYD-Tl-YcP" firstAttribute="height" secondItem="dMt-9X-noR" secondAttribute="height" multiplier="0.0692" id="reT-bG-N6D"/>
+                                    <constraint firstAttribute="trailing" secondItem="aYD-Tl-YcP" secondAttribute="trailing" id="srw-xT-q8h"/>
+                                    <constraint firstItem="aYD-Tl-YcP" firstAttribute="leading" secondItem="dMt-9X-noR" secondAttribute="leading" id="w2G-Hs-gnf"/>
+                                    <constraint firstItem="u6O-cO-jjO" firstAttribute="top" secondItem="aYD-Tl-YcP" secondAttribute="bottom" constant="-25" id="yet-EE-QTC"/>
+                                    <constraint firstItem="u6O-cO-jjO" firstAttribute="leading" secondItem="dMt-9X-noR" secondAttribute="leading" id="ymq-6v-gwL"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYG-u0-SFs" userLabel="Top Padding">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <subviews>
@@ -204,8 +232,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uW3-te-adO" secondAttribute="trailing" id="5HR-za-CGz"/>
+                            <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="dMt-9X-noR" secondAttribute="bottom" id="5aC-Fb-dCi"/>
                             <constraint firstItem="zNF-ka-wYi" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="8B4-dg-7jj"/>
                             <constraint firstItem="bmW-Za-Wxt" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="8mG-Sf-Nie"/>
+                            <constraint firstAttribute="trailing" secondItem="dMt-9X-noR" secondAttribute="trailing" id="9Rk-Wr-VFd"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="height" secondItem="5jj-Zs-UXQ" secondAttribute="height" multiplier="0.0597" id="BjG-k3-oxh"/>
                             <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="uW3-te-adO" secondAttribute="bottom" id="EO2-e8-CUK"/>
                             <constraint firstItem="aYG-u0-SFs" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="FLL-KU-5yD"/>
@@ -216,8 +246,10 @@
                             <constraint firstAttribute="trailing" secondItem="zNF-ka-wYi" secondAttribute="trailing" id="YVl-9O-T3E"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="aVo-Kv-C9S"/>
                             <constraint firstItem="nr8-Qq-S4Q" firstAttribute="top" secondItem="bmW-Za-Wxt" secondAttribute="bottom" id="buC-of-h7N"/>
+                            <constraint firstItem="dMt-9X-noR" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="cEO-fJ-0e7"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="top" secondItem="aYG-u0-SFs" secondAttribute="bottom" id="dWb-R6-PIs"/>
                             <constraint firstAttribute="trailing" secondItem="bmW-Za-Wxt" secondAttribute="trailing" id="ddc-5H-5Uk"/>
+                            <constraint firstItem="dMt-9X-noR" firstAttribute="top" secondItem="5jj-Zs-UXQ" secondAttribute="top" id="m13-a9-o0Z"/>
                             <constraint firstItem="Smm-FA-hZY" firstAttribute="centerX" secondItem="5jj-Zs-UXQ" secondAttribute="centerX" id="oTA-ms-LOu"/>
                             <constraint firstAttribute="trailing" secondItem="aYG-u0-SFs" secondAttribute="trailing" id="pio-Xw-HZs"/>
                             <constraint firstItem="uW3-te-adO" firstAttribute="leading" secondItem="5jj-Zs-UXQ" secondAttribute="leading" id="qNz-XX-n0M"/>
@@ -236,6 +268,7 @@
                         <outlet property="locationsUITableView" destination="uW3-te-adO" id="Vj7-Qa-6GB"/>
                         <outlet property="titleUILabel" destination="Smm-FA-hZY" id="hgZ-iC-NSA"/>
                         <outlet property="view" destination="5jj-Zs-UXQ" id="YV0-58-pUA"/>
+                        <outlet property="zeroLocationsMessageView" destination="dMt-9X-noR" id="by0-Zl-6Ya"/>
                         <segue destination="IFp-l7-uOQ" kind="show" identifier="FavouriteLocationsSegueAddLocation" id="Xui-0v-ACC"/>
                         <segue destination="gTB-77-pMC" kind="show" identifier="FavouriteLocationsSegueLocationDetail" id="Fpy-qB-aBA"/>
                     </connections>
