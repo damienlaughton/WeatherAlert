@@ -28,7 +28,40 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
   }
   
   func retrieveForecast () {
+    var existingForecastManagedObjects: [ForecastManagedObject] = []
+  
+    if let location = selectedLocation {
+      existingForecastManagedObjects = retrieveForecasts(location: location)
+    }
     
+    for existingForecastManagedObject in existingForecastManagedObjects {
+      let forecast = Forecast(forecastManagedObject: existingForecastManagedObject)
+      
+      self.forecasts.append(forecast)
+    }
+    
+    self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
+    
+    if self.forecasts.count == 0 || anyForecasteHasBeenModifiedMoreThanTenMinutesAgo() {
+      
+      updateLatestForecast()
+    }
+  }
+  
+  func anyForecasteHasBeenModifiedMoreThanTenMinutesAgo () -> Bool {
+    
+    var anyForecasteHasBeenModifiedMoreThanTenMinutesAgo = false
+    
+    let tenMinutesAgo = NSDate().dateByAddingTimeInterval(-1 * 10 * 60)
+    
+    for forecast in self.forecasts {
+      if forecast.timestamp.compare(tenMinutesAgo) == .OrderedAscending {
+        anyForecasteHasBeenModifiedMoreThanTenMinutesAgo = true
+        break
+      }
+    }
+    
+    return anyForecasteHasBeenModifiedMoreThanTenMinutesAgo
   }
   
   // MARK: - UITableViewDataSource Method(s)
@@ -142,8 +175,90 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
       viewForHeaderInSection.text = "  FORECASTS"
     }
     
-    
-    
     return viewForHeaderInSection
   }
+  
+  //  MARK: - Animation(s)
+  
+  func animateReloadOfTableData () {
+    
+    UIView.transitionWithView(self.detailsUITableView,
+      duration: 0.5,
+      options: UIViewAnimationOptions.TransitionCrossDissolve,
+      animations: {
+        
+        self.detailsUITableView.reloadData()
+        
+      },
+      completion: { finished in
+        
+    })
+  }
+  
+  //  MARK: - API
+  
+  func updateLatestForecast() {
+    
+    if let location = selectedLocation {
+    
+      if location.locationId != "0" {
+      
+        let apiForecast = APIForecast()
+        
+        apiForecast.fiveDayThreeHour(cityId: location.locationId, completion: {(resultObject, status) -> () in
+          
+          if let statusCode = Int(status) {
+            switch statusCode {
+            case 200:
+              if let dictionary = resultObject as? NSDictionary {
+                
+                if let list = dictionary.objectForKey("list") as? NSArray {
+                
+                
+                
+
+                  
+                  
+                    self.deletePreviousForecasts(location: location)
+                    
+                    for possibleForecastDictionary in list {
+                      
+                      if let forecastDictionary = possibleForecastDictionary as? NSDictionary {
+                        
+                        let newForecast = Forecast(forecastDictionary: forecastDictionary)
+                        
+                        self.persistNewForecast(location: location, newForecast: newForecast)
+                        
+                      }
+                      
+                    }
+                  
+                
+                
+                }
+              }
+              
+              self.retrieveForecast()
+              
+              break
+              
+            default:
+              //A non 200 code implies an error
+              
+              
+              
+              
+              
+              break
+            }
+          }
+          
+        })
+      
+      }
+    }
+  }
+
+
+  
 }

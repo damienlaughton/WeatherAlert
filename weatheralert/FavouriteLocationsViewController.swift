@@ -271,7 +271,7 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
             }
           }
         
-          self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
+          self.retrieveExistingWeather()
         
         break
         

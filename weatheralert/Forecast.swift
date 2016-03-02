@@ -14,6 +14,13 @@ struct Forecast {
   var dateOfForecast: NSDate = NSDate()
   var timestamp: NSDate = NSDate()
   
+  lazy var formatter: NSDateFormatter = {
+    let temp = NSDateFormatter()
+    //    "Mon, 18 Jan 2016 14:22:44 GMT"
+    temp.dateFormat = "yyyy-MM-dd HH:mm:ss" // ?
+    return temp
+  }()
+  
   init (forecastDictionary: NSDictionary) {
     
     if let _ = forecastDictionary.objectForKey("wind") {
@@ -27,7 +34,15 @@ struct Forecast {
       if let windDirection = wind.objectForKey("deg") as? Float {
         self.windDirection = windDirection
       }
+    }
+    
+    if let _ = forecastDictionary.objectForKey("dt_txt") {
+      let possibleDateOfForecast = forecastDictionary.objectForKey("dt_txt") as! String
       
+      if let dateOfForecast = formatter.dateFromString(possibleDateOfForecast) {
+      
+        self.dateOfForecast = dateOfForecast
+      }
     }
     
     print(self)

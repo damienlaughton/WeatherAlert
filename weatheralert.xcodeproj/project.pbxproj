@@ -262,9 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				6DA6DC851C848B9F000921C9 /* RootViewController.swift */,
+				6D6976781C85DB5C009062D2 /* RootViewController+CoreData.swift */,
 				6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */,
 				6D8ED0C51C84DF7C00A791AB /* AddLocationViewController.swift */,
-				6D6976781C85DB5C009062D2 /* RootViewController+CoreData.swift */,
 				6D8ED0C81C84E5BA00A791AB /* LocationDetailViewController.swift */,
 			);
 			name = ViewControllers;
