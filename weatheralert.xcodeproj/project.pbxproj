@@ -56,7 +56,6 @@
 		6DA6DC8C1C848B9F000921C9 /* weatheralert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8A1C848B9F000921C9 /* weatheralert.xcdatamodeld */; };
 		6DA6DC8E1C848B9F000921C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8D1C848B9F000921C9 /* Assets.xcassets */; };
 		6DA6DC911C848B9F000921C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA6DC8F1C848B9F000921C9 /* LaunchScreen.storyboard */; };
-		6DA6DC9C1C848B9F000921C9 /* weatheralertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DC9B1C848B9F000921C9 /* weatheralertTests.swift */; };
 		6DA6DCA81C84900F000921C9 /* CoreDataManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCA61C84900F000921C9 /* CoreDataManagerExtension.swift */; };
 		6DA6DCA91C84900F000921C9 /* CoreDataManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCA71C84900F000921C9 /* CoreDataManagerSingleton.swift */; };
 		6DA6DCAB1C849061000921C9 /* ApplicationManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCAA1C849061000921C9 /* ApplicationManagerSingleton.swift */; };
@@ -64,8 +63,11 @@
 		6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */; };
 		6DA6DCB31C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
 		6DA6DCB41C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
+		6DAE84FC1C87588E00791C63 /* AddLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE84FB1C87588E00791C63 /* AddLocationTests.swift */; };
+		6DAE84FE1C8758D400791C63 /* LocationDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE84FD1C8758D400791C63 /* LocationDetailTests.swift */; };
 		6DBA4D501C87281600C2C62C /* CompassRoseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA4D4F1C87281600C2C62C /* CompassRoseUICollectionViewCell.swift */; };
 		6DBA4D511C87281600C2C62C /* CompassRoseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA4D4F1C87281600C2C62C /* CompassRoseUICollectionViewCell.swift */; };
+		6DBA4D531C874E1E00C2C62C /* FavouriteLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA4D521C874E1E00C2C62C /* FavouriteLocationsTests.swift */; };
 		6DDB5E981C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E991C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E9C1C85814700B580A7 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E9B1C85814700B580A7 /* APIRoot.swift */; };
@@ -110,14 +112,16 @@
 		6DA6DC901C848B9F000921C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DA6DC921C848B9F000921C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DA6DC971C848B9F000921C9 /* weatheralertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatheralertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DA6DC9B1C848B9F000921C9 /* weatheralertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatheralertTests.swift; sourceTree = "<group>"; };
 		6DA6DC9D1C848B9F000921C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DA6DCA61C84900F000921C9 /* CoreDataManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerExtension.swift; sourceTree = "<group>"; };
 		6DA6DCA71C84900F000921C9 /* CoreDataManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerSingleton.swift; sourceTree = "<group>"; };
 		6DA6DCAA1C849061000921C9 /* ApplicationManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManagerSingleton.swift; sourceTree = "<group>"; };
 		6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationsViewController.swift; sourceTree = "<group>"; };
 		6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUITabelViewCell.swift; sourceTree = "<group>"; };
+		6DAE84FB1C87588E00791C63 /* AddLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationTests.swift; sourceTree = "<group>"; };
+		6DAE84FD1C8758D400791C63 /* LocationDetailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailTests.swift; sourceTree = "<group>"; };
 		6DBA4D4F1C87281600C2C62C /* CompassRoseUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassRoseUICollectionViewCell.swift; sourceTree = "<group>"; };
+		6DBA4D521C874E1E00C2C62C /* FavouriteLocationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationsTests.swift; sourceTree = "<group>"; };
 		6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerSingleton.swift; sourceTree = "<group>"; };
 		6DDB5E9B1C85814700B580A7 /* APIRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,8 +227,10 @@
 		6DA6DC9A1C848B9F000921C9 /* weatheralertTests */ = {
 			isa = PBXGroup;
 			children = (
-				6DA6DC9B1C848B9F000921C9 /* weatheralertTests.swift */,
 				6DA6DC9D1C848B9F000921C9 /* Info.plist */,
+				6DBA4D521C874E1E00C2C62C /* FavouriteLocationsTests.swift */,
+				6DAE84FB1C87588E00791C63 /* AddLocationTests.swift */,
+				6DAE84FD1C8758D400791C63 /* LocationDetailTests.swift */,
 			);
 			path = weatheralertTests;
 			sourceTree = "<group>";
@@ -413,7 +419,6 @@
 			files = (
 				6DA6DCB41C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */,
 				6D6976671C85D34A009062D2 /* weatheralert.xcdatamodeld in Sources */,
-				6DA6DC9C1C848B9F000921C9 /* weatheralertTests.swift in Sources */,
 				6D6976731C85D450009062D2 /* LocationManagedObject.swift in Sources */,
 				6D6976631C8586FA009062D2 /* APIForecast.swift in Sources */,
 				6D69766D1C85D450009062D2 /* SignatureManagedObject+CoreDataProperties.swift in Sources */,
@@ -427,8 +432,10 @@
 				6DDB5E9D1C85814700B580A7 /* APIRoot.swift in Sources */,
 				6D8ED0C71C84DF7C00A791AB /* AddLocationViewController.swift in Sources */,
 				6D2C1E191C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift in Sources */,
+				6DAE84FE1C8758D400791C63 /* LocationDetailTests.swift in Sources */,
 				6D6976571C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */,
 				6D2C1E121C86A22F005B1B4D /* Forecast.swift in Sources */,
+				6DAE84FC1C87588E00791C63 /* AddLocationTests.swift in Sources */,
 				6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */,
 				6D2C1E271C86A989005B1B4D /* ForecastUITableViewCell.swift in Sources */,
 				6D2C1E1B1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */,
@@ -438,6 +445,7 @@
 				6DBA4D511C87281600C2C62C /* CompassRoseUICollectionViewCell.swift in Sources */,
 				6D8ED0B71C84A14900A791AB /* ApplicationManagerSingleton.swift in Sources */,
 				6D8ED0B91C84A14900A791AB /* CoreDataManagerSingleton.swift in Sources */,
+				6DBA4D531C874E1E00C2C62C /* FavouriteLocationsTests.swift in Sources */,
 				6D69767A1C85DB5C009062D2 /* RootViewController+CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = weatheralert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilology.weatheralert;
@@ -568,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = weatheralert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilology.weatheralert;

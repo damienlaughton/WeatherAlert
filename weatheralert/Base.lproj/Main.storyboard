@@ -27,7 +27,7 @@
         <!--Favourite Locations View Controller-->
         <scene sceneID="95e-I5-ytm">
             <objects>
-                <viewController storyboardIdentifier="FavouriteLocationsViewController" id="73W-e6-5zg" customClass="FavouriteLocationsViewController" customModule="weatheralert" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FavouriteLocationsViewController" storyboardIdentifier="FavouriteLocationsViewController" id="73W-e6-5zg" customClass="FavouriteLocationsViewController" customModule="weatheralert" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T5O-y2-63j"/>
                         <viewControllerLayoutGuide type="bottom" id="nr8-Qq-S4Q"/>
@@ -567,7 +567,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13/10/2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="ZIM-0w-d54">
                                                             <rect key="frame" x="0.0" y="0.0" width="326" height="14"/>
                                                             <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HQm-zy-roQ">

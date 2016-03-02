@@ -187,6 +187,38 @@
             endingLineNumber = "66"
             landmarkName = "forecast(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralert.ForecastUITableViewCell.forecast (weatheralert.ForecastUITableViewCell)(__ObjC.NSIndexPath) -&gt; Swift.Optional&lt;weatheralert.Forecast&gt;"
+                  moduleName = "weatheralert"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/ForecastUITableViewCell.swift"
+                  timestampString = "478639269.527511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "514">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralertTests.ForecastUITableViewCell.forecast (weatheralertTests.ForecastUITableViewCell)(__ObjC.NSIndexPath) -&gt; Swift.Optional&lt;weatheralertTests.Forecast&gt;"
+                  moduleName = "weatheralertTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/ForecastUITableViewCell.swift"
+                  timestampString = "478639269.969744"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "514">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -203,6 +235,118 @@
             endingLineNumber = "148"
             landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weatheralertTests/weatheralertTests.swift"
+            timestampString = "478631182.004033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "setUp()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weatheralert/RootViewController+CoreData.swift"
+            timestampString = "478639043.661226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "retrieveExistingLocation(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralert.RootViewController.retrieveExistingLocation (weatheralert.RootViewController)(Swift.String) -&gt; Swift.Optional&lt;weatheralert.LocationManagedObject&gt;"
+                  moduleName = "weatheralert"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/RootViewController+CoreData.swift"
+                  timestampString = "478639269.529585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralertTests.RootViewController.retrieveExistingLocation (weatheralertTests.RootViewController)(Swift.String) -&gt; Swift.Optional&lt;weatheralertTests.LocationManagedObject&gt;"
+                  moduleName = "weatheralertTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/RootViewController+CoreData.swift"
+                  timestampString = "478639269.975096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weatheralert/Location.swift"
+            timestampString = "478639178.605953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "init(weatherDictionary:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralert.Location.init (weatheralert.Location.Type)(weatherDictionary : __ObjC.NSDictionary) -&gt; weatheralert.Location"
+                  moduleName = "weatheralert"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/Location.swift"
+                  timestampString = "478639269.530414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "2244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weatheralertTests.Location.init (weatheralertTests.Location.Type)(weatherDictionary : __ObjC.NSDictionary) -&gt; weatheralertTests.Location"
+                  moduleName = "weatheralertTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/damien/xcode_projects/weatheralert/weatheralert/Location.swift"
+                  timestampString = "478639269.975349"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "2244">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
