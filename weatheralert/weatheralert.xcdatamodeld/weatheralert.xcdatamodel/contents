@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="ForecastManagedObject" representedClassName="ForecastManagedObject" parentEntity="SignatureManagedObject" syncable="YES">
+        <attribute name="dateOfForecast" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="windDirection" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationManagedObject" inverseName="forecasts" inverseEntity="LocationManagedObject" syncable="YES"/>
+    </entity>
     <entity name="LocationManagedObject" representedClassName="LocationManagedObject" parentEntity="SignatureManagedObject" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locationId" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,13 +13,15 @@
         <attribute name="originalName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="windDirection" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="forecasts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ForecastManagedObject" inverseName="location" inverseEntity="ForecastManagedObject" syncable="YES"/>
     </entity>
     <entity name="SignatureManagedObject" representedClassName="SignatureManagedObject" syncable="YES">
         <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="date_modified" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LocationManagedObject" positionX="-74" positionY="9" width="254" height="133"/>
+        <element name="LocationManagedObject" positionX="-72" positionY="77" width="254" height="148"/>
         <element name="SignatureManagedObject" positionX="-72" positionY="-136" width="252" height="73"/>
+        <element name="ForecastManagedObject" positionX="295" positionY="11" width="317" height="103"/>
     </elements>
 </model>

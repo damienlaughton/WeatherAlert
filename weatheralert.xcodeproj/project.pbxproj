@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D2C1E111C86A22F005B1B4D /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E101C86A22F005B1B4D /* Forecast.swift */; };
+		6D2C1E121C86A22F005B1B4D /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E101C86A22F005B1B4D /* Forecast.swift */; };
+		6D2C1E181C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E141C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift */; };
+		6D2C1E191C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E141C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift */; };
+		6D2C1E1A1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E151C86A4B9005B1B4D /* ForecastManagedObject.swift */; };
+		6D2C1E1B1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E151C86A4B9005B1B4D /* ForecastManagedObject.swift */; };
+		6D2C1E1F1C86A5FD005B1B4D /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1C1C86A5FD005B1B4D /* weatheralert.sqlite */; };
+		6D2C1E201C86A5FD005B1B4D /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1C1C86A5FD005B1B4D /* weatheralert.sqlite */; };
+		6D2C1E211C86A5FD005B1B4D /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */; };
+		6D2C1E221C86A5FD005B1B4D /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */; };
+		6D2C1E231C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */; };
+		6D2C1E241C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */; };
 		6D6976561C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */; };
 		6D6976571C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */; };
 		6D6976591C8584C2009062D2 /* String+withTerminatingSlash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976581C8584C2009062D2 /* String+withTerminatingSlash.swift */; };
@@ -56,12 +68,6 @@
 		6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */; };
 		6DA6DCB31C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
 		6DA6DCB41C849CBA000921C9 /* LocationUITabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */; };
-		6DC3E4951C864465003CA0C0 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4921C864465003CA0C0 /* weatheralert.sqlite-shm */; };
-		6DC3E4961C864465003CA0C0 /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4921C864465003CA0C0 /* weatheralert.sqlite-shm */; };
-		6DC3E4971C864465003CA0C0 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4931C864465003CA0C0 /* weatheralert.sqlite-wal */; };
-		6DC3E4981C864465003CA0C0 /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4931C864465003CA0C0 /* weatheralert.sqlite-wal */; };
-		6DC3E4991C864465003CA0C0 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4941C864465003CA0C0 /* weatheralert.sqlite */; };
-		6DC3E49A1C864465003CA0C0 /* weatheralert.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DC3E4941C864465003CA0C0 /* weatheralert.sqlite */; };
 		6DDB5E981C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E991C857A7F00B580A7 /* APIManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */; };
 		6DDB5E9C1C85814700B580A7 /* APIRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB5E9B1C85814700B580A7 /* APIRoot.swift */; };
@@ -79,6 +85,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D2C1E101C86A22F005B1B4D /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		6D2C1E141C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ForecastManagedObject+CoreDataProperties.swift"; path = "../ForecastManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6D2C1E151C86A4B9005B1B4D /* ForecastManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastManagedObject.swift; path = ../ForecastManagedObject.swift; sourceTree = "<group>"; };
+		6D2C1E1C1C86A5FD005B1B4D /* weatheralert.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weatheralert.sqlite; sourceTree = "<group>"; };
+		6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-shm"; sourceTree = "<group>"; };
+		6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-wal"; sourceTree = "<group>"; };
 		6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+asParamatisedString.swift"; sourceTree = "<group>"; };
 		6D6976581C8584C2009062D2 /* String+withTerminatingSlash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+withTerminatingSlash.swift"; sourceTree = "<group>"; };
 		6D69765B1C85851E009062D2 /* NSData+asJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+asJSONObject.swift"; sourceTree = "<group>"; };
@@ -109,9 +121,6 @@
 		6DA6DCAA1C849061000921C9 /* ApplicationManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManagerSingleton.swift; sourceTree = "<group>"; };
 		6DA6DCAF1C849C2C000921C9 /* FavouriteLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationsViewController.swift; sourceTree = "<group>"; };
 		6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUITabelViewCell.swift; sourceTree = "<group>"; };
-		6DC3E4921C864465003CA0C0 /* weatheralert.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-shm"; sourceTree = "<group>"; };
-		6DC3E4931C864465003CA0C0 /* weatheralert.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-wal"; sourceTree = "<group>"; };
-		6DC3E4941C864465003CA0C0 /* weatheralert.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weatheralert.sqlite; sourceTree = "<group>"; };
 		6DDB5E971C857A7F00B580A7 /* APIManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerSingleton.swift; sourceTree = "<group>"; };
 		6DDB5E9B1C85814700B580A7 /* APIRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,9 +161,11 @@
 				6D6976691C85D450009062D2 /* SignatureManagedObject.swift */,
 				6D69766A1C85D450009062D2 /* LocationManagedObject+CoreDataProperties.swift */,
 				6D69766B1C85D450009062D2 /* LocationManagedObject.swift */,
-				6DC3E4921C864465003CA0C0 /* weatheralert.sqlite-shm */,
-				6DC3E4931C864465003CA0C0 /* weatheralert.sqlite-wal */,
-				6DC3E4941C864465003CA0C0 /* weatheralert.sqlite */,
+				6D2C1E141C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift */,
+				6D2C1E151C86A4B9005B1B4D /* ForecastManagedObject.swift */,
+				6D2C1E1C1C86A5FD005B1B4D /* weatheralert.sqlite */,
+				6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */,
+				6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				6D8ED0BC1C84A46900A791AB /* Location.swift */,
+				6D2C1E101C86A22F005B1B4D /* Forecast.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -346,10 +358,10 @@
 			files = (
 				6DA6DC911C848B9F000921C9 /* LaunchScreen.storyboard in Resources */,
 				6D8ED0C01C84AE0800A791AB /* Default-568h@2x.png in Resources */,
-				6DC3E4991C864465003CA0C0 /* weatheralert.sqlite in Resources */,
 				6DA6DC8E1C848B9F000921C9 /* Assets.xcassets in Resources */,
-				6DC3E4951C864465003CA0C0 /* weatheralert.sqlite-shm in Resources */,
-				6DC3E4971C864465003CA0C0 /* weatheralert.sqlite-wal in Resources */,
+				6D2C1E1F1C86A5FD005B1B4D /* weatheralert.sqlite in Resources */,
+				6D2C1E231C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */,
+				6D2C1E211C86A5FD005B1B4D /* weatheralert.sqlite-shm in Resources */,
 				6DA6DC891C848B9F000921C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,12 +370,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC3E4961C864465003CA0C0 /* weatheralert.sqlite-shm in Resources */,
-				6DC3E49A1C864465003CA0C0 /* weatheralert.sqlite in Resources */,
 				6D8ED0B51C84A13C00A791AB /* Main.storyboard in Resources */,
-				6DC3E4981C864465003CA0C0 /* weatheralert.sqlite-wal in Resources */,
 				6D6976651C85CCAA009062D2 /* Assets.xcassets in Resources */,
 				6D8ED0B61C84A14300A791AB /* LaunchScreen.storyboard in Resources */,
+				6D2C1E221C86A5FD005B1B4D /* weatheralert.sqlite-shm in Resources */,
+				6D2C1E241C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */,
+				6D2C1E201C86A5FD005B1B4D /* weatheralert.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,8 +401,11 @@
 				6DA6DCA91C84900F000921C9 /* CoreDataManagerSingleton.swift in Sources */,
 				6D8ED0C61C84DF7C00A791AB /* AddLocationViewController.swift in Sources */,
 				6DA6DC8C1C848B9F000921C9 /* weatheralert.xcdatamodeld in Sources */,
+				6D2C1E181C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift in Sources */,
 				6D69765F1C8586EC009062D2 /* APIWeather.swift in Sources */,
+				6D2C1E111C86A22F005B1B4D /* Forecast.swift in Sources */,
 				6DA6DC841C848B9F000921C9 /* AppDelegate.swift in Sources */,
+				6D2C1E1A1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */,
 				6DDB5E9C1C85814700B580A7 /* APIRoot.swift in Sources */,
 				6D6976561C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */,
 				6D6976701C85D450009062D2 /* LocationManagedObject+CoreDataProperties.swift in Sources */,
@@ -419,8 +434,11 @@
 				6D69765D1C85851E009062D2 /* NSData+asJSONObject.swift in Sources */,
 				6DDB5E9D1C85814700B580A7 /* APIRoot.swift in Sources */,
 				6D8ED0C71C84DF7C00A791AB /* AddLocationViewController.swift in Sources */,
+				6D2C1E191C86A4B9005B1B4D /* ForecastManagedObject+CoreDataProperties.swift in Sources */,
 				6D6976571C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */,
+				6D2C1E121C86A22F005B1B4D /* Forecast.swift in Sources */,
 				6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */,
+				6D2C1E1B1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */,
 				6D8ED0B81C84A14900A791AB /* CoreDataManagerExtension.swift in Sources */,
 				6D69765A1C8584C2009062D2 /* String+withTerminatingSlash.swift in Sources */,
 				6D6976711C85D450009062D2 /* LocationManagedObject+CoreDataProperties.swift in Sources */,

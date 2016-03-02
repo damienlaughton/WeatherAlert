@@ -1,5 +1,5 @@
 //
-//  LocationManagedObject+CoreDataProperties.swift
+//  ForecastManagedObject+CoreDataProperties.swift
 //  weatheralert
 //
 //  Created by Damien Laughton on 02/03/2016.
@@ -12,14 +12,11 @@
 import Foundation
 import CoreData
 
-extension LocationManagedObject {
+extension ForecastManagedObject {
 
-    @NSManaged var country: String?
-    @NSManaged var locationId: String?
-    @NSManaged var name: String?
-    @NSManaged var originalName: String?
-    @NSManaged var windDirection: NSNumber?
     @NSManaged var windSpeed: NSNumber?
-    @NSManaged var forecasts: NSSet?
+    @NSManaged var windDirection: NSNumber?
+    @NSManaged var dateOfForecast: NSDate?
+    @NSManaged var location: LocationManagedObject?
 
 }

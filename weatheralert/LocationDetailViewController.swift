@@ -10,6 +10,8 @@ import UIKit
 
 class LocationDetailViewController: RootViewController {
   
+  @IBOutlet weak var detailsUITableView: UITableView!
+  
   var selectedLocation: Location? = .None
   
   override func viewDidLoad() {
