@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteLocationsViewController: RootViewController {
+class FavouriteLocationsViewController: RootViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var locationsUITableView: UITableView!
   @IBOutlet weak var titleUILabel: UILabel!
@@ -118,6 +118,8 @@ class FavouriteLocationsViewController: RootViewController {
     
     return cell
   }
+  
+  // MARK: - UITableViewDelegate Method(s)
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     

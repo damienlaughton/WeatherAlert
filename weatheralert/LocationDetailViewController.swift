@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationDetailViewController: RootViewController {
+class LocationDetailViewController: RootViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var detailsUITableView: UITableView!
   
@@ -41,7 +41,7 @@ class LocationDetailViewController: RootViewController {
     
     var numberOfRowsInSection: Int = 1
     
-    if section == 2 {
+    if section == 1 {
       numberOfRowsInSection = forecasts.count
     }
     
@@ -51,7 +51,7 @@ class LocationDetailViewController: RootViewController {
   func location(indexPath: NSIndexPath) -> Location? {
     var location : Location? = .None
     
-    if indexPath.section == 1 {
+    if indexPath.section == 0 {
       location = selectedLocation
     }
     
@@ -61,7 +61,7 @@ class LocationDetailViewController: RootViewController {
   func forecast(indexPath: NSIndexPath) -> Forecast? {
     var forecast : Forecast? = .None
     
-    if indexPath.section == 2 {
+    if indexPath.section == 1 {
       forecast = forecasts[indexPath.row]
     }
     
@@ -75,9 +75,11 @@ class LocationDetailViewController: RootViewController {
     return heightForRowAtIndexPath
   }
   
+  
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
   
-    if indexPath.section == 1 {
+    if indexPath.section == 0 {
     
       var cell = tableView.dequeueReusableCellWithIdentifier("LocationUITabelViewCell") as! LocationUITabelViewCell!
       
@@ -94,7 +96,7 @@ class LocationDetailViewController: RootViewController {
       return cell
     }
     
-    if indexPath.section == 2 {
+    if indexPath.section == 1 {
       
       var cell = tableView.dequeueReusableCellWithIdentifier("ForecastUITableViewCell") as! ForecastUITableViewCell!
       
@@ -114,9 +116,34 @@ class LocationDetailViewController: RootViewController {
     return UITableViewCell()
   }
   
+  // MARK: - UITableViewDelegate Method(s)
+  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
     tableView.deselectRowAtIndexPath(indexPath, animated: false)
+  }
+  
+  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    let heightForHeaderInSection: CGFloat = 21.0
     
+    return heightForHeaderInSection
+  }
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let viewForHeaderInSection: UILabel = UILabel()
+    
+    viewForHeaderInSection.font = UIFont(name: "Futura-CondensedMedium", size: 16.0)
+    
+    if section == 0 {
+      viewForHeaderInSection.text = "  CURRENT WEATHER"
     }
+
+    if section == 1 {
+      viewForHeaderInSection.text = "  FORECASTS"
+    }
+    
+    
+    
+    return viewForHeaderInSection
+  }
 }
