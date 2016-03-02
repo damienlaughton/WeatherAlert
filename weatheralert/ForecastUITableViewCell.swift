@@ -58,7 +58,13 @@ class ForecastUITableViewCell: UITableViewCell, UICollectionViewDataSource, UICo
   }
   
   func forecast (indexPath: NSIndexPath) -> Forecast? {
-    let forecast : Forecast? = forecasts[indexPath.row]
+    var forecast: Forecast? = .None
+    
+    if indexPath.row < forecasts.count {
+      forecast = forecasts[indexPath.row]
+    } else {
+      
+    }
     
     return forecast
   }

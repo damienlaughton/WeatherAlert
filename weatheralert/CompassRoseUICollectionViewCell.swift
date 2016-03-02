@@ -26,11 +26,11 @@ class CompassRoseUICollectionViewCell: UICollectionViewCell {
     
     windDirectionUILabel.text = "\(forecast.windDirection)°"
     
-//    let formatter: NSDateFormatter = NSDateFormatter()
-//      formatter.dateFormat = "HH:mm"
-//    
-//    let timeText = formatter.stringFromDate(forecast.dateOfForecast)
-//      timeUILabel.text = timeText
+    let formatter: NSDateFormatter = NSDateFormatter()
+      formatter.dateFormat = "HH:mm"
+    
+    let timeText = formatter.stringFromDate(forecast.dateOfForecast)
+      timeUILabel.text = timeText
     
     adjustWindArrowSize(forecast.windSpeed)
     

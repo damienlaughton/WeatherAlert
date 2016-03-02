@@ -100,10 +100,13 @@ import CoreData
   
   private func save(context: NSManagedObjectContext?) {
     if let moc = context {
+    moc.performBlockAndWait {
       var error: NSError? = nil
       if moc.hasChanges {
         do {
-          try moc.save()
+          
+            try moc.save()
+        
         } catch let error1 as NSError {
           error = error1
           // Replace this implementation with code to handle the error appropriately.
@@ -112,6 +115,7 @@ import CoreData
           abort()
         }
       }
+        }
     }
   }
   
