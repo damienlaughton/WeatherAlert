@@ -15,6 +15,8 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
   var selectedLocation: Location? = .None
   var forecasts: [Forecast] = []
   
+  var dailyForecasts: [[Forecast]] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -40,10 +42,43 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
       self.forecasts.append(forecast)
     }
     
+    apportionDailyForecasts()
+    
     self.performSelectorOnMainThread("animateReloadOfTableData", withObject: .None, waitUntilDone: false)
     
     if self.forecasts.count == 0 || anyForecasteHasBeenModifiedMoreThanTenMinutesAgo() {
       updateLatestForecast()
+    }
+  }
+  
+  func apportionDailyForecasts () {
+    dailyForecasts = []
+    
+    if forecasts.count > 0 {
+    
+      forecasts.sortInPlace{ (lhs: Forecast, rhs: Forecast) -> Bool in
+        return lhs.dateOfForecast.compare(rhs.dateOfForecast) == .OrderedAscending
+      }
+
+    
+      var nextForecasts: [Forecast] = []
+      
+      var dateNextForecasts = forecasts[0].dateOfForecast
+      
+      for forecast in forecasts {
+      
+        let forecastDate = NSCalendar.currentCalendar().startOfDayForDate(forecast.dateOfForecast)
+        let dateNextForecastsDate = NSCalendar.currentCalendar().startOfDayForDate(dateNextForecasts)
+      
+        if forecastDate.compare(dateNextForecastsDate) == .OrderedSame {
+          nextForecasts.append(forecast)
+        } else {
+          dateNextForecasts = forecast.dateOfForecast
+          dailyForecasts.append(nextForecasts)
+          nextForecasts = []
+          nextForecasts.append(forecast)
+        }
+      }
     }
   }
   
@@ -74,7 +109,7 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
     var numberOfRowsInSection: Int = 1
     
     if section == 1 {
-      numberOfRowsInSection = forecasts.count
+      numberOfRowsInSection = dailyForecasts.count
     }
     
     return numberOfRowsInSection
@@ -90,14 +125,14 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
     return location
   }
   
-  func forecast(indexPath: NSIndexPath) -> Forecast? {
-    var forecast : Forecast? = .None
+  func dailyForecast(indexPath: NSIndexPath) -> [Forecast]? {
+    var dailyForecast : [Forecast] = []
     
     if indexPath.section == 1 {
-      forecast = forecasts[indexPath.row]
+      dailyForecast = dailyForecasts[indexPath.row]
     }
     
-    return forecast
+    return dailyForecast
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -142,8 +177,8 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
         cell = ForecastUITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ForecastUITableViewCell")
       }
       
-      if let forecast = forecast(indexPath) {
-        cell.configure(forecast)
+      if let dailyForecast = dailyForecast(indexPath) {
+        cell.configure(dailyForecast)
       }
       
       return cell

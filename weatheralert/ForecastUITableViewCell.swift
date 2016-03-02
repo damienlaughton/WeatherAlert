@@ -45,15 +45,11 @@ class ForecastUITableViewCell: UITableViewCell {
   @IBOutlet weak var windSpeedUILabel_5: UILabel!
   @IBOutlet weak var windDirectionUILabel_5: UILabel!
   
-  var forecast1: Forecast? = .None
-  var forecast2: Forecast? = .None
-  var forecast3: Forecast? = .None
-  var forecast4: Forecast? = .None
-  var forecast5: Forecast? = .None
+  var forecasts: [Forecast] = []
   
-  func configure(forecast1: Forecast) {
+  func configure(forecasts: [Forecast]) {
     
-    self.forecast1 = forecast1
+    self.forecasts = forecasts
   }
   
   //  MARK: - Programmatic UI Effects
