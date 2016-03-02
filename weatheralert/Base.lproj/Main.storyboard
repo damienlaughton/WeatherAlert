@@ -623,7 +623,7 @@
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-gC-b9n">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-gC-b9n">
                                                                             <rect key="frame" x="0.0" y="68" width="44" height="12"/>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                             <nil key="highlightedColor"/>
@@ -686,7 +686,7 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="zds-z8-Kcf">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="zds-z8-Kcf">
                                                                     <rect key="frame" x="0.0" y="68" width="44" height="12"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
@@ -744,7 +744,7 @@
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-AV-4IK">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-AV-4IK">
                                                                             <rect key="frame" x="0.0" y="68" width="44" height="12"/>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                             <nil key="highlightedColor"/>
@@ -807,7 +807,7 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="Y1O-PC-QDH">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="Y1O-PC-QDH">
                                                                     <rect key="frame" x="0.0" y="68" width="44" height="12"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
@@ -920,6 +920,31 @@
                                         <connections>
                                             <outlet property="borderUIView" destination="P1w-2y-Ah4" id="FfV-iy-C0x"/>
                                             <outlet property="dateUILabel" destination="ZIM-0w-d54" id="fPP-OY-gG5"/>
+                                            <outlet property="forecastContainerUIView_1" destination="GSm-6L-ZrY" id="HK8-kV-uiv"/>
+                                            <outlet property="forecastContainerUIView_2" destination="jpK-Vw-7Os" id="D0f-Oe-BBI"/>
+                                            <outlet property="forecastContainerUIView_3" destination="XaK-2Q-fFQ" id="3QY-6e-wkY"/>
+                                            <outlet property="forecastContainerUIView_4" destination="nmj-hf-hq5" id="Jnx-vI-Krv"/>
+                                            <outlet property="forecastContainerUIView_5" destination="9BT-jf-QIO" id="4ds-mg-sMQ"/>
+                                            <outlet property="windArrowHeightConstraint_1" destination="0ud-Lx-JT4" id="i4U-qB-q9P"/>
+                                            <outlet property="windArrowHeightConstraint_2" destination="w6g-r2-MHV" id="3vo-BF-gfr"/>
+                                            <outlet property="windArrowHeightConstraint_3" destination="Ada-qz-pDY" id="TGp-cL-bh5"/>
+                                            <outlet property="windArrowHeightConstraint_4" destination="uXk-EQ-htp" id="9aW-tV-IlC"/>
+                                            <outlet property="windArrowHeightConstraint_5" destination="8uI-rg-AQv" id="Uqn-2f-jvn"/>
+                                            <outlet property="windArrowUIImageView_1" destination="KjY-Pf-iHW" id="6fG-h3-5Bj"/>
+                                            <outlet property="windArrowUIImageView_2" destination="UAj-DY-oKQ" id="NDw-dM-xxP"/>
+                                            <outlet property="windArrowUIImageView_3" destination="reI-gb-0Yn" id="AGn-b7-27c"/>
+                                            <outlet property="windArrowUIImageView_4" destination="nYE-n3-F2l" id="UOj-GS-xdw"/>
+                                            <outlet property="windArrowUIImageView_5" destination="gmV-E3-FOd" id="ncn-2T-Qmk"/>
+                                            <outlet property="windDirectionUILabel_1" destination="PyX-xM-Hbk" id="vvB-Ig-h65"/>
+                                            <outlet property="windDirectionUILabel_2" destination="hdh-h9-Grg" id="dqK-ue-0ZX"/>
+                                            <outlet property="windDirectionUILabel_3" destination="beM-Nl-uN6" id="GlA-15-69Z"/>
+                                            <outlet property="windDirectionUILabel_4" destination="QMK-5v-uRc" id="bSl-kS-8UB"/>
+                                            <outlet property="windDirectionUILabel_5" destination="qAK-aM-7v9" id="CX7-O1-kUx"/>
+                                            <outlet property="windSpeedUILabel_1" destination="qKw-Dn-3JG" id="3DZ-3b-CxI"/>
+                                            <outlet property="windSpeedUILabel_2" destination="7lk-tJ-t09" id="N9S-6m-xIV"/>
+                                            <outlet property="windSpeedUILabel_3" destination="kS3-fJ-prj" id="5uj-9g-onC"/>
+                                            <outlet property="windSpeedUILabel_4" destination="3yO-hO-e6K" id="Ax3-O0-kDg"/>
+                                            <outlet property="windSpeedUILabel_5" destination="EiI-Rn-Z5k" id="Y6U-Eu-OCT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

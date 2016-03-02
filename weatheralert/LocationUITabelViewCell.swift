@@ -39,7 +39,7 @@ class LocationUITabelViewCell: UITableViewCell {
   
 //  MARK: - Programmatic UI Effects
   
-  func updateProfileImageViewCornerRadius () {
+  func updateBorderViewCornerRadius () {
   
     borderUIView.layer.cornerRadius = 10.0
     borderUIView.layer.borderColor = UIColor.blackColor().CGColor
@@ -67,7 +67,7 @@ class LocationUITabelViewCell: UITableViewCell {
   override func drawRect(rect: CGRect) {
     super.drawRect(rect)
     
-    updateProfileImageViewCornerRadius()
+    updateBorderViewCornerRadius()
   }
   
 }
