@@ -200,11 +200,12 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
     
     if let location = selectedLocation {
     
-      if location.locationId != "0" {
+      
       
       self.forecasts = []
+      let apiForecast = APIForecast()
       
-        let apiForecast = APIForecast()
+      if location.locationId != "0" {
         
         apiForecast.fiveDayThreeHour(cityId: location.locationId, completion: {(resultObject, status) -> () in
           
@@ -214,48 +215,70 @@ class LocationDetailViewController: RootViewController, UITableViewDelegate, UIT
               if let dictionary = resultObject as? NSDictionary {
                 
                 if let list = dictionary.objectForKey("list") as? NSArray {
-                
-                
-                
-
-                  
-                  
-                    self.deletePreviousForecasts(location: location)
+ 
+                  self.deletePreviousForecasts(location: location)
                     
-                    for possibleForecastDictionary in list {
+                  for possibleForecastDictionary in list {
+                    
+                    if let forecastDictionary = possibleForecastDictionary as? NSDictionary {
                       
-                      if let forecastDictionary = possibleForecastDictionary as? NSDictionary {
-                        
-                        let newForecast = Forecast(forecastDictionary: forecastDictionary)
-                        
-                        self.persistNewForecast(location: location, newForecast: newForecast)
-                        
-                      }
+                      let newForecast = Forecast(forecastDictionary: forecastDictionary)
+                      
+                      self.persistNewForecast(location: location, newForecast: newForecast)
                       
                     }
-                  
-                
-                
+                    
+                  }
                 }
               }
               
               self.retrieveForecast()
               
               break
-              
             default:
               //A non 200 code implies an error
-              
-              
-              
-              
-              
               break
             }
           }
           
         })
       
+      } else {
+        apiForecast.fiveDayThreeHour(cityName: location.name, country: location.country, completion: {(resultObject, status) -> () in
+          
+          if let statusCode = Int(status) {
+            switch statusCode {
+            case 200:
+              if let dictionary = resultObject as? NSDictionary {
+                
+                if let list = dictionary.objectForKey("list") as? NSArray {
+                  
+                  self.deletePreviousForecasts(location: location)
+                  
+                  for possibleForecastDictionary in list {
+                    
+                    if let forecastDictionary = possibleForecastDictionary as? NSDictionary {
+                      
+                      let newForecast = Forecast(forecastDictionary: forecastDictionary)
+                      
+                      self.persistNewForecast(location: location, newForecast: newForecast)
+                      
+                    }
+                    
+                  }
+                }
+              }
+              
+              self.retrieveForecast()
+              
+              break
+            default:
+              //A non 200 code implies an error
+              break
+            }
+          }
+          
+        })
       }
     }
   }
