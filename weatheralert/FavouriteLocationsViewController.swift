@@ -15,7 +15,8 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
   @IBOutlet weak var addButtonTrailingNSLayoutConstraint: NSLayoutConstraint!
   @IBOutlet weak var launchCopyUIImageView: UIImageView!
   @IBOutlet weak var zeroLocationsMessageView: UIView!
-
+  
+  var deleteLocationIndexPath: NSIndexPath? = .None
   
   var locations: [Location] = []
   
@@ -139,6 +140,15 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
       ApplicationManagerSingleton.sharedInstance.selectedLocation = location
       
       performSegueWithIdentifier("FavouriteLocationsSegueLocationDetail", sender: self)
+    }
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+    deleteLocationIndexPath = indexPath
+      if let location = location(indexPath) {
+        confirmDelete(location.name)
+      }
     }
   }
   
@@ -312,6 +322,39 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
         
       })
     }
+  }
+  
+  // MARK: - Deleting Locations
+  
+  func confirmDelete(location: String) {
+    let alert = UIAlertController(title: "Delete Location", message: "Are you sure you want to delete \(location)?", preferredStyle: .ActionSheet)
+    
+    let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeleteLocation)
+    let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeleteLocation)
+    
+    alert.addAction(DeleteAction)
+    alert.addAction(CancelAction)
+    
+    self.presentViewController(alert, animated: true, completion: nil)
+  }
+  
+  func handleDeleteLocation(alertAction: UIAlertAction!) -> Void {
+    if let indexPath = deleteLocationIndexPath {
+    
+      locationsUITableView.beginUpdates()
+      
+      locations.removeAtIndex(indexPath.row)
+
+      locationsUITableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+      
+      deleteLocationIndexPath = .None
+      
+      locationsUITableView.endUpdates()
+    }
+  }
+  
+  func cancelDeleteLocation(alertAction: UIAlertAction!) {
+    deleteLocationIndexPath = .None
   }
 }
 
