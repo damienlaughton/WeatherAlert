@@ -16,7 +16,6 @@ struct Forecast {
   
   lazy var formatter: NSDateFormatter = {
     let temp = NSDateFormatter()
-    //    "Mon, 18 Jan 2016 14:22:44 GMT"
     temp.dateFormat = "yyyy-MM-dd HH:mm:ss" // ?
     return temp
   }()

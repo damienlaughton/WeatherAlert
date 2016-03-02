@@ -19,6 +19,17 @@ class ForecastUITableViewCell: UITableViewCell, UICollectionViewDataSource, UICo
   func configure(forecasts: [Forecast]) {
     
     self.forecasts = forecasts
+    
+    let formatter: NSDateFormatter = NSDateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    
+    if forecasts.count > 0 {
+    
+      let timeText = formatter.stringFromDate(forecasts[0].dateOfForecast)
+      dateUILabel.text = timeText
+      } else {
+      
+    }
   }
   
   //  MARK: - Programmatic UI Effects
