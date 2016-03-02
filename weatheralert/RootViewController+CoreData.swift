@@ -97,6 +97,22 @@ extension RootViewController {
     
   }
   
+  func deleteLocation(location location: Location) {
+    
+    if let moc = CoreDataManagerSingleton.sharedInstance.mainQManagedObjectContext() {
+      
+      moc.performBlockAndWait {
+        
+        if let locationManagedObject = self.retrieveExistingLocation(location.locationId) {
+            moc.deleteObject(locationManagedObject)
+          }
+        
+        CoreDataManagerSingleton.sharedInstance.saveAllContexts()
+      }
+    }
+  }
+
+  
   // MARK: - ForecastManagedObject
   
   func retrieveForecasts(location location: Location) -> [ForecastManagedObject] {

@@ -341,6 +341,11 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
   func handleDeleteLocation(alertAction: UIAlertAction!) -> Void {
     if let indexPath = deleteLocationIndexPath {
     
+      if let locationForDeletion = location(indexPath) {
+        deleteLocation(location: locationForDeletion)
+        
+      }
+    
       locationsUITableView.beginUpdates()
       
       locations.removeAtIndex(indexPath.row)
@@ -351,6 +356,8 @@ class FavouriteLocationsViewController: RootViewController, UITableViewDelegate,
       
       locationsUITableView.endUpdates()
     }
+    
+    checkForZeroLocations()
   }
   
   func cancelDeleteLocation(alertAction: UIAlertAction!) {
