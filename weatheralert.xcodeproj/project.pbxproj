@@ -19,6 +19,8 @@
 		6D2C1E221C86A5FD005B1B4D /* weatheralert.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */; };
 		6D2C1E231C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */; };
 		6D2C1E241C86A5FD005B1B4D /* weatheralert.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */; };
+		6D2C1E261C86A989005B1B4D /* ForecastUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E251C86A989005B1B4D /* ForecastUITableViewCell.swift */; };
+		6D2C1E271C86A989005B1B4D /* ForecastUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C1E251C86A989005B1B4D /* ForecastUITableViewCell.swift */; };
 		6D6976561C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */; };
 		6D6976571C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */; };
 		6D6976591C8584C2009062D2 /* String+withTerminatingSlash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6976581C8584C2009062D2 /* String+withTerminatingSlash.swift */; };
@@ -91,6 +93,7 @@
 		6D2C1E1C1C86A5FD005B1B4D /* weatheralert.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weatheralert.sqlite; sourceTree = "<group>"; };
 		6D2C1E1D1C86A5FD005B1B4D /* weatheralert.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-shm"; sourceTree = "<group>"; };
 		6D2C1E1E1C86A5FD005B1B4D /* weatheralert.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weatheralert.sqlite-wal"; sourceTree = "<group>"; };
+		6D2C1E251C86A989005B1B4D /* ForecastUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastUITableViewCell.swift; sourceTree = "<group>"; };
 		6D6976551C8583BC009062D2 /* NSDictionary+asParamatisedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+asParamatisedString.swift"; sourceTree = "<group>"; };
 		6D6976581C8584C2009062D2 /* String+withTerminatingSlash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+withTerminatingSlash.swift"; sourceTree = "<group>"; };
 		6D69765B1C85851E009062D2 /* NSData+asJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+asJSONObject.swift"; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA6DCB21C849CBA000921C9 /* LocationUITabelViewCell.swift */,
+				6D2C1E251C86A989005B1B4D /* ForecastUITableViewCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -405,6 +409,7 @@
 				6D69765F1C8586EC009062D2 /* APIWeather.swift in Sources */,
 				6D2C1E111C86A22F005B1B4D /* Forecast.swift in Sources */,
 				6DA6DC841C848B9F000921C9 /* AppDelegate.swift in Sources */,
+				6D2C1E261C86A989005B1B4D /* ForecastUITableViewCell.swift in Sources */,
 				6D2C1E1A1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */,
 				6DDB5E9C1C85814700B580A7 /* APIRoot.swift in Sources */,
 				6D6976561C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */,
@@ -438,6 +443,7 @@
 				6D6976571C8583BC009062D2 /* NSDictionary+asParamatisedString.swift in Sources */,
 				6D2C1E121C86A22F005B1B4D /* Forecast.swift in Sources */,
 				6DA6DCB11C849C2C000921C9 /* FavouriteLocationsViewController.swift in Sources */,
+				6D2C1E271C86A989005B1B4D /* ForecastUITableViewCell.swift in Sources */,
 				6D2C1E1B1C86A4B9005B1B4D /* ForecastManagedObject.swift in Sources */,
 				6D8ED0B81C84A14900A791AB /* CoreDataManagerExtension.swift in Sources */,
 				6D69765A1C8584C2009062D2 /* String+withTerminatingSlash.swift in Sources */,
